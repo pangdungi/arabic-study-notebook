@@ -1,0 +1,68 @@
+import type { StudyCardItem } from './studyCard'
+
+export const placeNouns: StudyCardItem[] = [
+  {
+    id: 'university',
+    korean: '대학교',
+    hint: 'university',
+    english: 'university',
+    arabic: 'جَامِعَة',
+    pronunciation: '자미아',
+  },
+  {
+    id: 'library',
+    korean: '도서관',
+    hint: 'library',
+    english: 'library',
+    arabic: 'مَكْتَبَة',
+    pronunciation: '막타바',
+  },
+  {
+    id: 'office',
+    korean: '사무실',
+    hint: 'office',
+    english: 'office',
+    arabic: 'مَكْتَب',
+    pronunciation: '막탑',
+  },
+  {
+    id: 'hospital',
+    korean: '병원',
+    hint: 'hospital',
+    english: 'hospital',
+    arabic: 'مُسْتَشْفَى',
+    pronunciation: '무스타쉬파',
+  },
+  {
+    id: 'hotel',
+    korean: '호텔',
+    hint: 'hotel',
+    english: 'hotel',
+    arabic: 'فُنْدُق',
+    pronunciation: '푼두크',
+  },
+  {
+    id: 'high-school',
+    korean: '고등학교',
+    hint: 'high school',
+    english: 'high school',
+    arabic: 'مَدْرَسَة ثَانَوِيَّة',
+    pronunciation: '마드라사 타나wiya',
+  },
+  {
+    id: 'company',
+    korean: '회사',
+    hint: 'company',
+    english: 'company',
+    arabic: 'شَرِكَة',
+    pronunciation: '샤리카',
+  },
+  {
+    id: 'city',
+    korean: '도시',
+    hint: 'city',
+    english: 'city',
+    arabic: 'مَدِينَة',
+    pronunciation: '마디나',
+  },
+]

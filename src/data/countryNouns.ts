@@ -1,0 +1,52 @@
+import type { StudyCardItem } from './studyCard'
+
+export const countryNouns: StudyCardItem[] = [
+  {
+    id: 'spain',
+    korean: '스페인',
+    hint: 'Spain',
+    english: 'Spain',
+    arabic: 'إِسْبَانْيَا',
+    pronunciation: '이스바니아',
+  },
+  {
+    id: 'south-korea',
+    korean: '남한',
+    hint: 'South Korea',
+    english: 'South Korea',
+    arabic: 'كُورِيَا الجَنُوبِيَّة',
+    pronunciation: '코리아 알자누비야',
+  },
+  {
+    id: 'japan',
+    korean: '일본',
+    hint: 'Japan',
+    english: 'Japan',
+    arabic: 'اليابان',
+    pronunciation: '알야반',
+  },
+  {
+    id: 'language',
+    korean: '언어',
+    hint: 'language',
+    english: 'language',
+    arabic: 'لُغَة',
+    pronunciation: '루가',
+  },
+  {
+    id: 'japanese-language',
+    korean: '일본어',
+    hint: 'Japanese (language)',
+    english: 'Japanese (language)',
+    arabic: 'اليابانية',
+    pronunciation: '알야바니야',
+  },
+  {
+    id: 'korean-language',
+    korean: '한국어',
+    hint: 'Korean (language)',
+    english: 'Korean (language)',
+    arabic: 'الكورية',
+    pronunciation: '알코리야',
+  },
+]

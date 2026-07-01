@@ -1,0 +1,60 @@
+import type { StudyCardItem } from './studyCard'
+
+export const weekdayNouns: StudyCardItem[] = [
+  {
+    id: 'sunday',
+    korean: '일요일',
+    hint: 'Sunday',
+    english: 'Sunday',
+    arabic: 'الْأَحَد',
+    pronunciation: '알아흐드',
+  },
+  {
+    id: 'monday',
+    korean: '월요일',
+    hint: 'Monday',
+    english: 'Monday',
+    arabic: 'الْإِثْنَيْن',
+    pronunciation: '알이쓰나인',
+  },
+  {
+    id: 'tuesday',
+    korean: '화요일',
+    hint: 'Tuesday',
+    english: 'Tuesday',
+    arabic: 'الثُّلَاثَاء',
+    pronunciation: '앗쑬라타',
+  },
+  {
+    id: 'wednesday',
+    korean: '수요일',
+    hint: 'Wednesday',
+    english: 'Wednesday',
+    arabic: 'الْأَرْبِعَاء',
+    pronunciation: '알아르비아',
+  },
+  {
+    id: 'thursday',
+    korean: '목요일',
+    hint: 'Thursday',
+    english: 'Thursday',
+    arabic: 'الْخَمِيس',
+    pronunciation: '알캄미스',
+  },
+  {
+    id: 'friday',
+    korean: '금요일',
+    hint: 'Friday',
+    english: 'Friday',
+    arabic: 'الْجُمُعَة',
+    pronunciation: '알쥼마',
+  },
+  {
+    id: 'saturday',
+    korean: '토요일',
+    hint: 'Saturday',
+    english: 'Saturday',
+    arabic: 'السَّبْت',
+    pronunciation: '앗사붙',
+  },
+]

@@ -1,0 +1,68 @@
+import type { StudyCardItem } from './studyCard'
+
+export const interrogatives: StudyCardItem[] = [
+  {
+    id: 'what',
+    korean: '뭐',
+    hint: 'what',
+    english: 'what',
+    arabic: 'مَاذَا',
+    pronunciation: '마다',
+  },
+  {
+    id: 'who',
+    korean: '누구',
+    hint: 'who',
+    english: 'who',
+    arabic: 'مَن',
+    pronunciation: '만',
+  },
+  {
+    id: 'where',
+    korean: '어디',
+    hint: 'where',
+    english: 'where',
+    arabic: 'أَيْنَ',
+    pronunciation: '아이나',
+  },
+  {
+    id: 'when',
+    korean: '언제',
+    hint: 'when',
+    english: 'when',
+    arabic: 'مَتَى',
+    pronunciation: '마타',
+  },
+  {
+    id: 'why',
+    korean: '왜',
+    hint: 'why',
+    english: 'why',
+    arabic: 'لِمَاذَا',
+    pronunciation: '리마다',
+  },
+  {
+    id: 'how',
+    korean: '어떻게',
+    hint: 'how',
+    english: 'how',
+    arabic: 'كَيْفَ',
+    pronunciation: '카이파',
+  },
+  {
+    id: 'how-many',
+    korean: '몇',
+    hint: 'how many',
+    english: 'how many',
+    arabic: 'كَم',
+    pronunciation: '캄',
+  },
+  {
+    id: 'which',
+    korean: '어느',
+    hint: 'which',
+    english: 'which',
+    arabic: 'أَيّ',
+    pronunciation: '아이',
+  },
+]

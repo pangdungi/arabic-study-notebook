@@ -1,0 +1,243 @@
+export type ArabicLetterForms = {
+  isolated: string
+  initial: string
+  medial: string | null
+  final: string
+}
+
+export type ArabicAlphabetLetter = {
+  id: string
+  nameKorean: string
+  nameEnglish: string
+  pronunciation: string
+  /** 다음 글자와 연결되는지 */
+  connectsToNext: boolean
+  forms: ArabicLetterForms
+}
+
+export const arabicAlphabet: ArabicAlphabetLetter[] = [
+  {
+    id: 'alif',
+    nameKorean: '알리프',
+    nameEnglish: 'alif',
+    pronunciation: '아',
+    connectsToNext: false,
+    forms: { isolated: 'ا', initial: 'ا', medial: 'ـا', final: 'ـا' },
+  },
+  {
+    id: 'ba',
+    nameKorean: '바',
+    nameEnglish: 'ba',
+    pronunciation: '바',
+    connectsToNext: true,
+    forms: { isolated: 'ب', initial: 'بـ', medial: 'ـبـ', final: 'ـب' },
+  },
+  {
+    id: 'ta',
+    nameKorean: '타',
+    nameEnglish: 'ta',
+    pronunciation: '타',
+    connectsToNext: true,
+    forms: { isolated: 'ت', initial: 'تـ', medial: 'ـتـ', final: 'ـت' },
+  },
+  {
+    id: 'tha',
+    nameKorean: '사',
+    nameEnglish: 'tha',
+    pronunciation: '사',
+    connectsToNext: true,
+    forms: { isolated: 'ث', initial: 'ثـ', medial: 'ـثـ', final: 'ـث' },
+  },
+  {
+    id: 'jim',
+    nameKorean: '짐',
+    nameEnglish: 'jim',
+    pronunciation: '짐',
+    connectsToNext: true,
+    forms: { isolated: 'ج', initial: 'جـ', medial: 'ـجـ', final: 'ـج' },
+  },
+  {
+    id: 'ha',
+    nameKorean: '하',
+    nameEnglish: 'ha',
+    pronunciation: '하',
+    connectsToNext: true,
+    forms: { isolated: 'ح', initial: 'حـ', medial: 'ـحـ', final: 'ـح' },
+  },
+  {
+    id: 'kha',
+    nameKorean: '카',
+    nameEnglish: 'kha',
+    pronunciation: '카',
+    connectsToNext: true,
+    forms: { isolated: 'خ', initial: 'خـ', medial: 'ـخـ', final: 'ـخ' },
+  },
+  {
+    id: 'dal',
+    nameKorean: '달',
+    nameEnglish: 'dal',
+    pronunciation: '달',
+    connectsToNext: false,
+    forms: { isolated: 'د', initial: 'د', medial: null, final: 'ـد' },
+  },
+  {
+    id: 'dhal',
+    nameKorean: '질',
+    nameEnglish: 'dhal',
+    pronunciation: '질',
+    connectsToNext: false,
+    forms: { isolated: 'ذ', initial: 'ذ', medial: null, final: 'ـذ' },
+  },
+  {
+    id: 'ra',
+    nameKorean: '라',
+    nameEnglish: 'ra',
+    pronunciation: '라',
+    connectsToNext: false,
+    forms: { isolated: 'ر', initial: 'ر', medial: null, final: 'ـر' },
+  },
+  {
+    id: 'zay',
+    nameKorean: '자',
+    nameEnglish: 'zay',
+    pronunciation: '자',
+    connectsToNext: false,
+    forms: { isolated: 'ز', initial: 'ز', medial: null, final: 'ـز' },
+  },
+  {
+    id: 'sin',
+    nameKorean: '신',
+    nameEnglish: 'sin',
+    pronunciation: '신',
+    connectsToNext: true,
+    forms: { isolated: 'س', initial: 'سـ', medial: 'ـسـ', final: 'ـس' },
+  },
+  {
+    id: 'shin',
+    nameKorean: '쉰',
+    nameEnglish: 'shin',
+    pronunciation: '쉰',
+    connectsToNext: true,
+    forms: { isolated: 'ش', initial: 'شـ', medial: 'ـشـ', final: 'ـش' },
+  },
+  {
+    id: 'sad',
+    nameKorean: '솟',
+    nameEnglish: 'sad',
+    pronunciation: '솟',
+    connectsToNext: true,
+    forms: { isolated: 'ص', initial: 'صـ', medial: 'ـصـ', final: 'ـص' },
+  },
+  {
+    id: 'dad',
+    nameKorean: '돗',
+    nameEnglish: 'dad',
+    pronunciation: '돗',
+    connectsToNext: true,
+    forms: { isolated: 'ض', initial: 'ضـ', medial: 'ـضـ', final: 'ـض' },
+  },
+  {
+    id: 'ta-emphatic',
+    nameKorean: '토',
+    nameEnglish: 'ta',
+    pronunciation: '토',
+    connectsToNext: true,
+    forms: { isolated: 'ط', initial: 'طـ', medial: 'ـطـ', final: 'ـط' },
+  },
+  {
+    id: 'za',
+    nameKorean: '조',
+    nameEnglish: 'za',
+    pronunciation: '조',
+    connectsToNext: true,
+    forms: { isolated: 'ظ', initial: 'ظـ', medial: 'ـظـ', final: 'ـظ' },
+  },
+  {
+    id: 'ayn',
+    nameKorean: '아인',
+    nameEnglish: 'ayn',
+    pronunciation: '아인',
+    connectsToNext: true,
+    forms: { isolated: 'ع', initial: 'عـ', medial: 'ـعـ', final: 'ـع' },
+  },
+  {
+    id: 'ghayn',
+    nameKorean: '간',
+    nameEnglish: 'ghayn',
+    pronunciation: '간',
+    connectsToNext: true,
+    forms: { isolated: 'غ', initial: 'غـ', medial: 'ـغـ', final: 'ـغ' },
+  },
+  {
+    id: 'fa',
+    nameKorean: '파',
+    nameEnglish: 'fa',
+    pronunciation: '파',
+    connectsToNext: true,
+    forms: { isolated: 'ف', initial: 'فـ', medial: 'ـفـ', final: 'ـف' },
+  },
+  {
+    id: 'qaf',
+    nameKorean: '까',
+    nameEnglish: 'qaf',
+    pronunciation: '까',
+    connectsToNext: true,
+    forms: { isolated: 'ق', initial: 'قـ', medial: 'ـقـ', final: 'ـق' },
+  },
+  {
+    id: 'kaf',
+    nameKorean: '카프',
+    nameEnglish: 'kaf',
+    pronunciation: '카프',
+    connectsToNext: true,
+    forms: { isolated: 'ك', initial: 'كـ', medial: 'ـكـ', final: 'ـك' },
+  },
+  {
+    id: 'lam',
+    nameKorean: '람',
+    nameEnglish: 'lam',
+    pronunciation: '람',
+    connectsToNext: true,
+    forms: { isolated: 'ل', initial: 'لـ', medial: 'ـلـ', final: 'ـل' },
+  },
+  {
+    id: 'mim',
+    nameKorean: '밈',
+    nameEnglish: 'mim',
+    pronunciation: '밈',
+    connectsToNext: true,
+    forms: { isolated: 'م', initial: 'مـ', medial: 'ـمـ', final: 'ـم' },
+  },
+  {
+    id: 'nun',
+    nameKorean: '눈',
+    nameEnglish: 'nun',
+    pronunciation: '눈',
+    connectsToNext: true,
+    forms: { isolated: 'ن', initial: 'نـ', medial: 'ـنـ', final: 'ـن' },
+  },
+  {
+    id: 'ha-end',
+    nameKorean: '하',
+    nameEnglish: 'ha',
+    pronunciation: '하',
+    connectsToNext: true,
+    forms: { isolated: 'ه', initial: 'هـ', medial: 'ـهـ', final: 'ـه' },
+  },
+  {
+    id: 'waw',
+    nameKorean: '와',
+    nameEnglish: 'waw',
+    pronunciation: '와',
+    connectsToNext: false,
+    forms: { isolated: 'و', initial: 'و', medial: null, final: 'ـو' },
+  },
+  {
+    id: 'ya',
+    nameKorean: '야',
+    nameEnglish: 'ya',
+    pronunciation: '야',
+    connectsToNext: true,
+    forms: { isolated: 'ي', initial: 'يـ', medial: 'ـيـ', final: 'ـي' },
+  },
+]

@@ -1,0 +1,60 @@
+import type { StudyCardItem } from './studyCard'
+
+export const personalPronouns: StudyCardItem[] = [
+  {
+    id: 'i',
+    korean: '나',
+    hint: 'I',
+    english: 'I',
+    arabic: 'أَنَا',
+    pronunciation: '아나',
+  },
+  {
+    id: 'you',
+    korean: '너',
+    hint: 'you',
+    english: 'you',
+    arabic: 'أَنْتَ',
+    pronunciation: '안타',
+  },
+  {
+    id: 'he',
+    korean: '그',
+    hint: 'he',
+    english: 'he',
+    arabic: 'هُوَ',
+    pronunciation: '후와',
+  },
+  {
+    id: 'she',
+    korean: '그녀',
+    hint: 'she',
+    english: 'she',
+    arabic: 'هِيَ',
+    pronunciation: '히야',
+  },
+  {
+    id: 'we',
+    korean: '우리',
+    hint: 'we',
+    english: 'we',
+    arabic: 'نَحْنُ',
+    pronunciation: '나흐누',
+  },
+  {
+    id: 'you-plural',
+    korean: '너희',
+    hint: 'you (plural)',
+    english: 'you (plural)',
+    arabic: 'أَنْتُمْ',
+    pronunciation: '안툼',
+  },
+  {
+    id: 'they',
+    korean: '그들',
+    hint: 'they',
+    english: 'they',
+    arabic: 'هُمْ',
+    pronunciation: '훔',
+  },
+]

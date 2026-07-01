@@ -1,0 +1,60 @@
+import type { StudyCardItem } from './studyCard'
+
+export const demonstrativePronouns: StudyCardItem[] = [
+  {
+    id: 'this-m',
+    korean: '이것 (남자)',
+    hint: 'this (m.)',
+    english: 'this (m.)',
+    arabic: 'هَذَا',
+    pronunciation: '하다',
+  },
+  {
+    id: 'this-f',
+    korean: '이것 (여자)',
+    hint: 'this (f.)',
+    english: 'this (f.)',
+    arabic: 'هَذِهِ',
+    pronunciation: '하디히',
+  },
+  {
+    id: 'that-m',
+    korean: '그것 (남자)',
+    hint: 'that (m.)',
+    english: 'that (m.)',
+    arabic: 'ذَلِكَ',
+    pronunciation: '딸릭',
+  },
+  {
+    id: 'that-f',
+    korean: '그것 (여자)',
+    hint: 'that (f.)',
+    english: 'that (f.)',
+    arabic: 'تِلْكَ',
+    pronunciation: '틸카',
+  },
+  {
+    id: 'there',
+    korean: '저기',
+    hint: 'there',
+    english: 'there',
+    arabic: 'هُنَاكَ',
+    pronunciation: '후나크',
+  },
+  {
+    id: 'these',
+    korean: '이것들',
+    hint: 'these',
+    english: 'these',
+    arabic: 'هَؤُلَاءِ',
+    pronunciation: '하울라',
+  },
+  {
+    id: 'those',
+    korean: '그것들',
+    hint: 'those',
+    english: 'those',
+    arabic: 'أُولَٰئِكَ',
+    pronunciation: '울라이카',
+  },
+]
