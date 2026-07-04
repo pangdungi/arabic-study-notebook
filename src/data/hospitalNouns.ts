@@ -50,6 +50,14 @@ export const hospitalNouns: StudyCardItem[] = [
     pronunciation: '라스',
   },
   {
+    id: 'eye',
+    korean: '눈',
+    hint: 'eye',
+    english: 'eye',
+    arabic: 'عَيْن',
+    pronunciation: '아인',
+  },
+  {
     id: 'iron',
     korean: '쇠',
     hint: 'iron',

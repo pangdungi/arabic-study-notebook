@@ -46,8 +46,8 @@ export const conjunctions: StudyCardItem[] = [
     korean: '~때문에',
     hint: 'because',
     english: 'because',
-    arabic: 'لِأَنَّ',
-    pronunciation: 'lianna',
+    arabic: 'بِسَبَبِ',
+    pronunciation: '비싸바',
   },
   {
     id: 'if',

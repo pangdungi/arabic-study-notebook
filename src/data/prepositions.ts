@@ -28,10 +28,18 @@ export const prepositions: StudyCardItem[] = [
   {
     id: 'to',
     korean: '~로',
-    hint: 'to',
-    english: 'to',
+    hint: 'to (place)',
+    english: 'to (place)',
     arabic: 'إِلَى',
     pronunciation: '일라',
+  },
+  {
+    id: 'to-verb',
+    korean: 'to',
+    hint: 'to — 동사에서만',
+    english: 'to (verbs only)',
+    arabic: 'أَنْ',
+    pronunciation: '안',
   },
   {
     id: 'about',

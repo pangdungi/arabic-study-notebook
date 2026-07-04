@@ -26,6 +26,14 @@ export const countryNouns: StudyCardItem[] = [
     pronunciation: '알야반',
   },
   {
+    id: 'china',
+    korean: '중국',
+    hint: 'China',
+    english: 'China',
+    arabic: 'الصِّين',
+    pronunciation: '앗씬',
+  },
+  {
     id: 'language',
     korean: '언어',
     hint: 'language',

@@ -25,10 +25,14 @@ export function SingularPluralSection({ onBack }: SingularPluralSectionProps) {
         </ul>
         <div className="case-vowel-table singular-plural-table" dir="rtl" lang="ar">
           <div className="case-vowel-table__row case-vowel-table__row--head singular-plural-table__row">
-            <span>كِتَاب</span>
-            <span>كِتَابَانِ</span>
-            <span>مُعَلِّمُونَ</span>
-            <span>مُعَلِّمَات</span>
+            {singularPluralIntro.tableExamples.map((example) => (
+              <span key={example.arabic}>{example.arabic}</span>
+            ))}
+          </div>
+          <div className="case-vowel-table__row case-vowel-table__row--pron singular-plural-table__row">
+            {singularPluralIntro.tableExamples.map((example) => (
+              <span key={`${example.arabic}-pron`}>{example.pronunciation}</span>
+            ))}
           </div>
           <div className="case-vowel-table__row case-vowel-table__row--labels singular-plural-table__row">
             <span>단수</span>
@@ -44,15 +48,23 @@ export function SingularPluralSection({ onBack }: SingularPluralSectionProps) {
           <div className="case-vowel-pattern">
             <div className="case-vowel-pattern__header">
               <p className="case-vowel-pattern__title">{group.title}</p>
-              <p className="case-vowel-pattern__marks" dir="rtl" lang="ar">
-                {group.suffixMarks}
-              </p>
+              <div className="case-vowel-pattern__marks-wrap">
+                <p className="case-vowel-pattern__marks" dir="rtl" lang="ar">
+                  {group.suffixMarks}
+                </p>
+                {group.suffixMarks !== '—' ? (
+                  <p className="case-vowel-pattern__marks-pron">{group.suffixKorean}</p>
+                ) : null}
+              </div>
             </div>
             <p className="case-vowel-pattern__term" dir="rtl" lang="ar">
               {group.arabicTerm}
             </p>
+            <p className="case-vowel-pattern__term-pron">{group.arabicTermPronunciation}</p>
             <p className="case-vowel-pattern__meta">
-              {group.suffixKorean} · {group.roleKorean}
+              {group.suffixMarks === '—'
+                ? `${group.suffixKorean} · ${group.roleKorean}`
+                : group.roleKorean}
             </p>
             <p className="case-vowel-pattern__note">{group.note}</p>
           </div>

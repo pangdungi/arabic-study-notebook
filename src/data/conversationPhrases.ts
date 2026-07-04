@@ -97,4 +97,28 @@ export const conversationPhrases: StudyCardItem[] = [
     arabic: 'سَهْل',
     pronunciation: '싸흘',
   },
+  {
+    id: 'want-bathroom-m',
+    korean: '화장실 원해? (남)',
+    hint: 'do you want the bathroom? (to a man)',
+    english: 'do you want the bathroom? (to a man)',
+    arabic: 'تُرِيدُ حَمَّامًا؟',
+    pronunciation: '투리두 하맘?',
+  },
+  {
+    id: 'want-bathroom-f',
+    korean: '화장실 원해? (여)',
+    hint: 'do you want the bathroom? (to a woman)',
+    english: 'do you want the bathroom? (to a woman)',
+    arabic: 'تُرِيدِينَ حَمَّامًا؟',
+    pronunciation: '투리디 하맘?',
+  },
+  {
+    id: 'something-exists',
+    korean: '무엇이 있다',
+    hint: 'there is something',
+    english: 'there is something',
+    arabic: 'يُوجَدُ شَيْءٌ',
+    pronunciation: '유자드 샤응',
+  },
 ]

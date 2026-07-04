@@ -456,6 +456,26 @@ body {
   background: var(--btn-bg);
 }
 
+.negation-particle {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--btn-border);
+  text-align: center;
+}
+
+.negation-particle__arabic {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.negation-particle__pron {
+  margin: 6px 0 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+}
+
 .negation-pattern__label,
 .negation-card__label {
   margin: 0 0 6px;
@@ -551,6 +571,30 @@ body {
 .case-vowel-table__row--labels {
   font-size: 0.8rem;
   color: #6b7280;
+}
+
+.case-vowel-table__row--pron {
+  font-size: 0.8rem;
+  color: #6b7280;
+  direction: ltr;
+}
+
+.case-vowel-pattern__marks-wrap {
+  text-align: right;
+}
+
+.case-vowel-pattern__marks-pron {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+.case-vowel-pattern__term-pron {
+  margin: -2px 0 6px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: right;
 }
 
 .case-vowel-group + .case-vowel-group {

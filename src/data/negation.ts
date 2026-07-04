@@ -9,6 +9,8 @@ export type NegationDrillItem = {
 export type NegationCategory = {
   id: string
   title: string
+  particleArabic: string
+  particlePronunciation: string
   note: string
   pattern: string
   items: NegationDrillItem[]
@@ -18,8 +20,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'present',
     title: '현재 부정',
+    particleArabic: 'لَا',
+    particlePronunciation: '라',
     pattern: 'لا + 현재형 동사',
-    note: '지금 하지 않거나, 습관적으로 하지 않을 때 씁니다. لا는 동사 바로 앞에 붙습니다.',
+    note: '지금 하지 않거나, 습관적으로 하지 않을 때 씁니다. لا(라)는 동사 바로 앞에 붙습니다.',
     items: [
       {
         id: 'present-i',
@@ -54,8 +58,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'past-ma',
     title: '과거 부정 (ما)',
+    particleArabic: 'مَا',
+    particlePronunciation: '마',
     pattern: 'ما + 과거형 동사',
-    note: '이미 지나간 일을 부정할 때 씁니다. ما는 과거형 동사 앞에 붙습니다.',
+    note: '이미 지나간 일을 부정할 때 씁니다. ما(마)는 과거형 동사 앞에 붙습니다.',
     items: [
       {
         id: 'past-ma-i',
@@ -90,8 +96,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'past-lam',
     title: '과거 부정 (لم)',
+    particleArabic: 'لَمْ',
+    particlePronunciation: '람',
     pattern: 'لم + 현재형(절법)',
-    note: 'ما와 비슷하게 “~하지 않았다”지만, 뒤 동사는 과거형이 아니라 현재형(절법)으로 씁니다.',
+    note: 'ما(마)와 비슷하게 “~하지 않았다”지만, 뒤 동사는 과거형이 아니라 현재형(절법)으로 씁니다. لم(람)을 씁니다.',
     items: [
       {
         id: 'past-lam-i',
@@ -126,8 +134,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'future',
     title: '미래 부정',
+    particleArabic: 'لَنْ',
+    particlePronunciation: '란',
     pattern: 'لن + 현재형(가정법)',
-    note: '앞으로 하지 않을 일을 부정합니다. لن 뒤 동사는 가정법(단모음)으로 바뀝니다.',
+    note: '앞으로 하지 않을 일을 부정합니다. لن(란) 뒤 동사는 가정법(단모음)으로 바뀝니다.',
     items: [
       {
         id: 'future-i',
@@ -162,8 +172,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'nominal',
     title: '명사문 부정',
+    particleArabic: 'لَيْسَ',
+    particlePronunciation: '레이사',
     pattern: 'ليس + 명사/형용사',
-    note: '“~이다”를 부정할 때 씁니다. 주어에 따라 ليس 형태가 바뀝니다.',
+    note: '“~이다”를 부정할 때 씁니다. 기본형 ليس(레이사)는 주어에 따라 لستُ, ليسَتْ 등으로 바뀝니다.',
     items: [
       {
         id: 'nominal-i',
@@ -205,8 +217,10 @@ export const negationCategories: NegationCategory[] = [
   {
     id: 'imperative',
     title: '명령 부정',
+    particleArabic: 'لَا',
+    particlePronunciation: '라',
     pattern: 'لا + 명령형(절법)',
-    note: '“~하지 마”라고 할 때 씁니다. 명령형 동사 앞에 لا를 붙입니다.',
+    note: '“~하지 마”라고 할 때 씁니다. 명령형 동사 앞에 لا(라)를 붙입니다.',
     items: [
       {
         id: 'imperative-you-m',

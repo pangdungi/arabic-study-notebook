@@ -21,6 +21,7 @@ import { sizeQuantityAdjectives } from '../data/sizeQuantityAdjectives'
 import { countryNouns } from '../data/countryNouns'
 import { placeNouns } from '../data/placeNouns'
 import { objectNouns } from '../data/objectNouns'
+import { generalNouns } from '../data/generalNouns'
 import { foodNouns } from '../data/foodNouns'
 import { hospitalNouns } from '../data/hospitalNouns'
 import { peopleNouns } from '../data/peopleNouns'
@@ -51,6 +52,7 @@ type StudyView =
   | 'object-nouns'
   | 'place-nouns'
   | 'country-nouns'
+  | 'general-nouns'
   | 'negation-menu'
   | 'negation-training'
   | 'alphabet'
@@ -254,6 +256,11 @@ export function StudyPage() {
               label: '국가',
               onClick: () => setView('country-nouns'),
             },
+            {
+              id: 'general-nouns',
+              label: '일반 명사',
+              onClick: () => setView('general-nouns'),
+            },
           ]}
         />
       </main>
@@ -350,6 +357,18 @@ export function StudyPage() {
         <WordCardSection
           title="국가"
           items={countryNouns}
+          onBack={() => setView('nouns-menu')}
+        />
+      </main>
+    )
+  }
+
+  if (view === 'general-nouns') {
+    return (
+      <main className="study-page">
+        <WordCardSection
+          title="일반 명사"
+          items={generalNouns}
           onBack={() => setView('nouns-menu')}
         />
       </main>

@@ -18,6 +18,13 @@ export function NegationTrainingSection({ category, onBack }: NegationTrainingSe
       </header>
 
       <div className="negation-pattern">
+        <div className="negation-particle">
+          <p className="negation-pattern__label">부정 표현</p>
+          <p className="negation-particle__arabic" dir="rtl" lang="ar">
+            {category.particleArabic}
+          </p>
+          <p className="negation-particle__pron">{category.particlePronunciation}</p>
+        </div>
         <p className="negation-pattern__label">패턴</p>
         <p className="negation-pattern__formula" dir="rtl" lang="ar">
           {category.pattern}

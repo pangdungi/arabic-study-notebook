@@ -74,6 +74,22 @@ export const timeAdverbs: StudyCardItem[] = [
     pronunciation: '까리반',
   },
   {
+    id: 'late',
+    korean: '늦게',
+    hint: 'late',
+    english: 'late',
+    arabic: 'مُتَأَخِّرًا',
+    pronunciation: '무타악키란',
+  },
+  {
+    id: 'on-the-weekend',
+    korean: '주말에',
+    hint: 'on the weekend',
+    english: 'on the weekend',
+    arabic: 'نِهَايَةَ الْأُسْبُوع',
+    pronunciation: '니하야 알우스부',
+  },
+  {
     id: 'soon-halan',
     korean: '곧',
     hint: 'soon, right away',
