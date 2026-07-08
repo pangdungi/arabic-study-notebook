@@ -5,6 +5,7 @@ import { AlphabetSection } from '../components/AlphabetSection'
 import { CaseVowelSection } from '../components/CaseVowelSection'
 import { SingularPluralSection } from '../components/SingularPluralSection'
 import { NegationTrainingSection } from '../components/NegationTrainingSection'
+import { SearchSection } from '../components/SearchSection'
 import { SuffixPronounSection } from '../components/SuffixPronounSection'
 import { StudySubMenu } from '../components/StudySubMenu'
 import { WordCardSection } from '../components/WordCardSection'
@@ -65,6 +66,7 @@ type StudyView =
 export function StudyPage() {
   const [view, setView] = useState<StudyView>('home')
   const [negationCategoryId, setNegationCategoryId] = useState(negationCategories[0]?.id ?? '')
+  const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     touchRegistry()
@@ -481,7 +483,38 @@ export function StudyPage() {
 
   return (
     <main className="study-page">
-      <div className="study-nav">
+      <div className="study-search">
+        <label className="study-search__label" htmlFor="study-search-input">
+          검색
+        </label>
+        <div className="study-search__field">
+          <input
+            id="study-search-input"
+            type="search"
+            className="study-search__input"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder="한글 · 영어 · 아랍어 · 발음"
+            autoComplete="off"
+            enterKeyHint="search"
+          />
+          {searchQuery ? (
+            <button
+              type="button"
+              className="study-search__clear"
+              onClick={() => setSearchQuery('')}
+              aria-label="검색어 지우기"
+            >
+              지우기
+            </button>
+          ) : null}
+        </div>
+      </div>
+
+      {searchQuery.trim() ? (
+        <SearchSection query={searchQuery} />
+      ) : (
+        <div className="study-nav">
         <button
           type="button"
           className="study-nav-btn"
@@ -601,7 +634,8 @@ export function StudyPage() {
         >
           회화
         </button>
-      </div>
+        </div>
+      )}
     </main>
   )
 }
