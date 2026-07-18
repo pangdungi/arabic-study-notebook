@@ -25,4 +25,12 @@ export const generalAdjectives: StudyCardItem[] = [
     arabic: 'لَطِيف',
     pronunciation: '라티프',
   },
+  {
+    id: 'difficult',
+    korean: '어려운',
+    hint: 'difficult, hard',
+    english: 'difficult, hard',
+    arabic: 'صَعْب',
+    pronunciation: '싸으바',
+  },
 ]

@@ -106,6 +106,14 @@ export const timeAdverbs: StudyCardItem[] = [
     pronunciation: '민자만',
   },
   {
+    id: 'originally',
+    korean: '원래',
+    hint: 'originally',
+    english: 'originally',
+    arabic: 'أَصْلًا',
+    pronunciation: '아슬란',
+  },
+  {
     id: 'every',
     korean: '매~',
     hint: 'every',

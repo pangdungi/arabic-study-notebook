@@ -121,4 +121,20 @@ export const conversationPhrases: StudyCardItem[] = [
     arabic: 'يُوجَدُ شَيْءٌ',
     pronunciation: '유자드 샤응',
   },
+  {
+    id: 'hungry-m',
+    korean: '배고파요? (남)',
+    hint: 'are you hungry? (to a man)',
+    english: 'are you hungry? (to a man)',
+    arabic: 'جَوْعَان؟',
+    pronunciation: '져와안?',
+  },
+  {
+    id: 'hungry-f',
+    korean: '배고파요? (여)',
+    hint: 'are you hungry? (to a woman)',
+    english: 'are you hungry? (to a woman)',
+    arabic: 'جَوْعَانَة؟',
+    pronunciation: '져와아나?',
+  },
 ]

@@ -18,6 +18,22 @@ export const hospitalNouns: StudyCardItem[] = [
     pronunciation: '아스난',
   },
   {
+    id: 'tooth',
+    korean: '치아',
+    hint: 'tooth (singular)',
+    english: 'tooth (singular)',
+    arabic: 'سِنّ',
+    pronunciation: '씬',
+  },
+  {
+    id: 'loose-tooth',
+    korean: '흔들리는 치아',
+    hint: 'loose / wobbly tooth',
+    english: 'loose / wobbly tooth',
+    arabic: 'مُتَحَرِّكَة',
+    pronunciation: '뭇타흐리카',
+  },
+  {
     id: 'dentures',
     korean: '틀니',
     hint: 'dentures',

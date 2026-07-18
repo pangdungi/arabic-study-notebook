@@ -32,6 +32,8 @@ export type SearchEntry = {
   hint?: string
   arabic: string
   pronunciation: string
+  verbId?: string
+  futureVerbId?: string
 }
 
 type IndexedEntry = SearchEntry & {
@@ -132,100 +134,29 @@ function buildIndex(): IndexedEntry[] {
   }
 
   for (const verb of verbs) {
-    const category = `동사 · ${verb.pastKorean}`
     entries.push({
       id: `verb-${verb.id}-summary`,
-      category,
-      korean: verb.pastKorean,
-      hint: verb.pastEnglish,
+      category: '동사',
+      korean: verb.pastEnglish,
+      hint: verb.pastKorean,
       arabic: verb.hePast.arabic,
       pronunciation: verb.hePast.pronunciation,
-      searchText: buildSearchText(
-        '동사',
-        verb.pastKorean,
-        verb.pastEnglish,
-        verb.hePast.arabic,
-        verb.hePast.pronunciation,
-      ),
+      verbId: verb.id,
+      searchText: buildSearchText('동사', verb.pastKorean, verb.pastEnglish),
     })
-
-    for (const row of verb.rows) {
-      entries.push(
-        {
-          id: `verb-${verb.id}-${row.id}-past`,
-          category,
-          korean: `${verb.pastKorean} · ${row.label} 과거`,
-          hint: row.hint,
-          arabic: row.past.arabic,
-          pronunciation: row.past.pronunciation,
-          searchText: buildSearchText(
-            '동사',
-            verb.pastKorean,
-            verb.pastEnglish,
-            row.label,
-            row.hint,
-            row.past.arabic,
-            row.past.pronunciation,
-          ),
-        },
-        {
-          id: `verb-${verb.id}-${row.id}-present`,
-          category,
-          korean: `${verb.pastKorean} · ${row.label} 현재`,
-          hint: row.hint,
-          arabic: row.present.arabic,
-          pronunciation: row.present.pronunciation,
-          searchText: buildSearchText(
-            '동사',
-            verb.pastKorean,
-            verb.pastEnglish,
-            row.label,
-            row.hint,
-            row.present.arabic,
-            row.present.pronunciation,
-          ),
-        },
-      )
-    }
   }
 
   for (const verb of futureVerbs) {
-    const category = `미래시제 · ${verb.futureKorean}`
     entries.push({
       id: `future-${verb.id}-summary`,
-      category,
-      korean: verb.futureKorean,
-      hint: verb.futureEnglish,
+      category: '미래시제',
+      korean: verb.futureEnglish,
+      hint: verb.futureKorean,
       arabic: verb.heFuture.arabic,
       pronunciation: verb.heFuture.pronunciation,
-      searchText: buildSearchText(
-        '미래시제',
-        verb.futureKorean,
-        verb.futureEnglish,
-        verb.heFuture.arabic,
-        verb.heFuture.pronunciation,
-      ),
+      futureVerbId: verb.id,
+      searchText: buildSearchText('미래시제', verb.futureKorean, verb.futureEnglish),
     })
-
-    for (const row of verb.rows) {
-      entries.push({
-        id: `future-${verb.id}-${row.id}`,
-        category,
-        korean: `${verb.futureKorean} · ${row.label}`,
-        hint: row.hint,
-        arabic: row.future.arabic,
-        pronunciation: row.future.pronunciation,
-        searchText: buildSearchText(
-          '미래시제',
-          verb.futureKorean,
-          verb.futureEnglish,
-          row.label,
-          row.hint,
-          row.future.arabic,
-          row.future.pronunciation,
-        ),
-      })
-    }
   }
 
   for (const letter of arabicAlphabet) {
