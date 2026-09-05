@@ -1,7 +1,12 @@
-import { adverbs } from '../data/adverbs'
+import { degreeAdverbs } from '../data/degreeAdverbs'
+import { directionAdverbs } from '../data/directionAdverbs'
+import { frequencyAdverbs } from '../data/frequencyAdverbs'
+import { restrictiveAdverbs } from '../data/restrictiveAdverbs'
+import { timeAdverbs } from '../data/timeAdverbs'
 import { arabicAlphabet } from '../data/arabicAlphabet'
 import { arabicNumbers } from '../data/arabicNumbers'
-import { caseVowelGroups } from '../data/caseVowels'
+import { getCaseVowelDrillItems } from '../data/caseVowels'
+import { getDefiniteArticleSearchItems } from '../data/definiteArticle'
 import { conjunctions } from '../data/conjunctions'
 import { conversationPhrases } from '../data/conversationPhrases'
 import { countryNouns } from '../data/countryNouns'
@@ -21,6 +26,7 @@ import { prepositions } from '../data/prepositions'
 import { singularPluralGroups } from '../data/singularPlural'
 import { sizeQuantityAdjectives } from '../data/sizeQuantityAdjectives'
 import { suffixPronouns } from '../data/suffixPronouns'
+import { dateNouns } from '../data/dateNouns'
 import { timeNouns } from '../data/timeNouns'
 import { verbs } from '../data/verbs'
 import { weekdayNouns } from '../data/weekdayNouns'
@@ -94,13 +100,18 @@ function buildIndex(): IndexedEntry[] {
   const entries: IndexedEntry[] = [
     ...fromCards('인칭대명사', personalPronouns),
     ...fromCards('지시대명사', demonstrativePronouns),
-    ...fromCards('부사', adverbs),
+    ...fromCards('방향', directionAdverbs),
+    ...fromCards('빈도부사', frequencyAdverbs),
+    ...fromCards('시간부사', timeAdverbs),
+    ...fromCards('정도부사', degreeAdverbs),
+    ...fromCards('한정부사', restrictiveAdverbs),
     ...fromCards('아랍어 숫자', arabicNumbers),
     ...fromCards('의문사', interrogatives),
     ...fromCards('접속사', conjunctions),
     ...fromCards('전치사', prepositions),
     ...fromCards('형용사', [...sizeQuantityAdjectives, ...generalAdjectives]),
     ...fromCards('명사 · 시간', timeNouns),
+    ...fromCards('명사 · 날짜', dateNouns),
     ...fromCards('명사 · 요일', weekdayNouns),
     ...fromCards('명사 · 사람', peopleNouns),
     ...fromCards('명사 · 병원', hospitalNouns),
@@ -125,9 +136,8 @@ function buildIndex(): IndexedEntry[] {
     )
   }
 
-  for (const group of caseVowelGroups) {
-    entries.push(...fromCards(`격모음 · ${group.title}`, group.items))
-  }
+  entries.push(...fromCards('정관사 ال', getDefiniteArticleSearchItems()))
+  entries.push(...fromCards('격모음', getCaseVowelDrillItems()))
 
   for (const group of singularPluralGroups) {
     entries.push(...fromCards(`단복수 · ${group.title}`, group.items))
@@ -257,6 +267,17 @@ export function searchStudyContent(query: string, limit = 80): SearchEntry[] {
   }
 
   return results.map(({ searchText: _searchText, ...entry }) => entry)
+}
+
+export function getAllSearchEntries(): SearchEntry[] {
+  return searchIndex.map(({ searchText: _searchText, ...entry }) => entry)
+}
+
+export function getSearchEntryById(id: string): SearchEntry | undefined {
+  const entry = searchIndex.find((item) => item.id === id)
+  if (!entry) return undefined
+  const { searchText: _searchText, ...result } = entry
+  return result
 }
 
 export const searchIndexSize = searchIndex.length

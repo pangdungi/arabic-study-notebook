@@ -58,35 +58,51 @@ function getArabicFemaleVoice() {
   return arabicVoices[0]
 }
 
+export function sanitizeArabicSpeechText(text: string): string {
+  const withoutArrow = text.includes('→') ? (text.split('→').pop()?.trim() ?? text) : text
+  return withoutArrow.replace(/[…?؟]/g, '').trim()
+}
+
+export function preloadArabicVoices() {
+  if (!('speechSynthesis' in window)) return
+
+  window.speechSynthesis.getVoices()
+  window.speechSynthesis.addEventListener('voiceschanged', () => {
+    window.speechSynthesis.getVoices()
+  })
+}
+
 export function speakArabic(text: string) {
   if (!('speechSynthesis' in window)) return false
 
-  const run = () => {
-    window.speechSynthesis.cancel()
+  const cleaned = sanitizeArabicSpeechText(text)
+  if (!cleaned) return false
 
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = 'ar-SA'
+  // Chrome sometimes pauses synthesis until resumed.
+  window.speechSynthesis.resume()
 
-    const voice = getArabicFemaleVoice()
-    if (voice) {
-      utterance.voice = voice
-      utterance.lang = voice.lang
-    }
+  window.speechSynthesis.cancel()
 
-    utterance.rate = 0.9
-    window.speechSynthesis.speak(utterance)
+  const utterance = new SpeechSynthesisUtterance(cleaned)
+  utterance.lang = 'ar-SA'
+
+  const voice = getArabicFemaleVoice()
+  if (voice) {
+    utterance.voice = voice
+    utterance.lang = voice.lang
   }
 
-  if (window.speechSynthesis.getVoices().length === 0) {
-    window.speechSynthesis.addEventListener('voiceschanged', run, { once: true })
-    window.speechSynthesis.getVoices()
-  } else {
-    run()
-  }
+  utterance.rate = 0.9
+  // Must run synchronously inside the click handler, not in voiceschanged.
+  window.speechSynthesis.speak(utterance)
 
   return true
 }
 
 export function canSpeakArabic() {
   return 'speechSynthesis' in window
+}
+
+if (typeof window !== 'undefined') {
+  preloadArabicVoices()
 }

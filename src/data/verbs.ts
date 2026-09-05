@@ -30,7 +30,7 @@ export const verbPersonMeta = [
   { id: 'hum', label: '훔', hint: 'they' },
 ] as const
 
-type VerbSeed = {
+export type VerbSeed = {
   id: string
   pastEnglish: string
   pastKorean: string
@@ -40,7 +40,7 @@ type VerbSeed = {
   presentPron: readonly [string, string, string, string, string, string, string, string]
 }
 
-function buildVerb(seed: VerbSeed): VerbItem {
+export function buildVerbFromSeed(seed: VerbSeed): VerbItem {
   const rows = verbPersonMeta.map((person, index) => ({
     id: person.id,
     label: person.label,
@@ -213,6 +213,15 @@ const verbSeeds: VerbSeed[] = [
     presentPron: ['아타칼라무', '타타칼라무', '타타칼라미나', '야타칼라무', '타타칼라무', '나타칼라무', '타타칼라무나', '야타칼라무나'],
   },
   {
+    id: 'speak',
+    pastEnglish: 'speak',
+    pastKorean: '말하다',
+    past: ['تَكَلَّمْتُ', 'تَكَلَّمْتَ', 'تَكَلَّمْتِ', 'تَكَلَّمَ', 'تَكَلَّمَتْ', 'تَكَلَّمْنَا', 'تَكَلَّمْتُمْ', 'تَكَلَّمُوا'],
+    pastPron: ['타칼람투', '타칼람타', '타칼람티', '타칼라마', '타칼라마트', '타칼람나', '타칼람툼', '타칼라무'],
+    present: ['أَتَكَلَّمُ', 'تَتَكَلَّمُ', 'تَتَكَلَّمِينَ', 'يَتَكَلَّمُ', 'تَتَكَلَّمُ', 'نَتَكَلَّمُ', 'تَتَكَلَّمُونَ', 'يَتَكَلَّمُونَ'],
+    presentPron: ['아타칼라무', '타타칼라무', '타타칼라미나', '야타칼라무', '타타칼라무', '나타칼라무', '타타칼라무나', '야타칼라무나'],
+  },
+  {
     id: 'made',
     pastEnglish: 'made',
     pastKorean: '만들었다',
@@ -357,6 +366,15 @@ const verbSeeds: VerbSeed[] = [
     presentPron: ['아비으', '타비으', '타비이나', '야비으', '타비으', '나비으', '타비우나', '야비우나'],
   },
   {
+    id: 'sell',
+    pastEnglish: 'sell',
+    pastKorean: '팔다',
+    past: ['بِعْتُ', 'بِعْتَ', 'بِعْتِ', 'بَاعَ', 'بَاعَتْ', 'بِعْنَا', 'بِعْتُمْ', 'بَاعُوا'],
+    pastPron: ['비트', '비타', '비티', '바아', '바아트', '비나', '비툼', '바아우'],
+    present: ['أَبِيعُ', 'تَبِيعُ', 'تَبِيعِينَ', 'يَبِيعُ', 'تَبِيعُ', 'نَبِيعُ', 'تَبِيعُونَ', 'يَبِيعُونَ'],
+    presentPron: ['아비으', '타비으', '타비이나', '야비으', '타비으', '나비으', '타비우나', '야비우나'],
+  },
+  {
     id: 'knew',
     pastEnglish: 'knew',
     pastKorean: '알았다',
@@ -464,9 +482,27 @@ const verbSeeds: VerbSeed[] = [
     present: ['أَضَعُ', 'تَضَعُ', 'تَضَعِينَ', 'يَضَعُ', 'تَضَعُ', 'نَضَعُ', 'تَضَعُونَ', 'يَضَعُونَ'],
     presentPron: ['아다우', '타다우', '타다이나', '야다우', '타다우', '나다우', '타다우나', '야다우나'],
   },
+  {
+    id: 'started',
+    pastEnglish: 'started',
+    pastKorean: '시작했다',
+    past: ['بَدَأْتُ', 'بَدَأْتَ', 'بَدَأْتِ', 'بَدَأَ', 'بَدَأَتْ', 'بَدَأْنَا', 'بَدَأْتُمْ', 'بَدَؤُوا'],
+    pastPron: ['바다아투', '바다아타', '바다아티', '바다아', '바다아트', '바다아나', '바다아툼', '바다아우'],
+    present: ['أَبْدَأُ', 'تَبْدَأُ', 'تَبْدَئِينَ', 'يَبْدَأُ', 'تَبْدَأُ', 'نَبْدَأُ', 'تَبْدَؤُونَ', 'يَبْدَؤُونَ'],
+    presentPron: ['아브다아', '타브다아', '타브다아이나', '야브다아', '타브다아', '나브다아', '타브다아우나', '야브다아우나'],
+  },
+  {
+    id: 'start',
+    pastEnglish: 'start',
+    pastKorean: '시작하다',
+    past: ['بَدَأْتُ', 'بَدَأْتَ', 'بَدَأْتِ', 'بَدَأَ', 'بَدَأَتْ', 'بَدَأْنَا', 'بَدَأْتُمْ', 'بَدَؤُوا'],
+    pastPron: ['바다아투', '바다아타', '바다아티', '바다아', '바다아트', '바다아나', '바다아툼', '바다아우'],
+    present: ['أَبْدَأُ', 'تَبْدَأُ', 'تَبْدَئِينَ', 'يَبْدَأُ', 'تَبْدَأُ', 'نَبْدَأُ', 'تَبْدَؤُونَ', 'يَبْدَؤُونَ'],
+    presentPron: ['아브다아', '타브다아', '타브다아이나', '야브다아', '타브다아', '나브다아', '타브다아우나', '야브다아우나'],
+  },
 ]
 
-export const verbs: VerbItem[] = verbSeeds.map(buildVerb)
+export const verbs: VerbItem[] = verbSeeds.map(buildVerbFromSeed)
 
 export function getVerb(id: string): VerbItem | undefined {
   return verbs.find((verb) => verb.id === id)

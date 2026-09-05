@@ -33,4 +33,28 @@ export const generalAdjectives: StudyCardItem[] = [
     arabic: 'صَعْب',
     pronunciation: '싸으바',
   },
+  {
+    id: 'easy',
+    korean: '쉬운',
+    hint: 'easy',
+    english: 'easy',
+    arabic: 'سَهْل',
+    pronunciation: '싸흘',
+  },
+  {
+    id: 'same',
+    korean: '같은',
+    hint: 'same',
+    english: 'same',
+    arabic: 'نَفْس الشَّيْء',
+    pronunciation: '납스 쉐이',
+  },
+  {
+    id: 'last',
+    korean: '마지막',
+    hint: 'last',
+    english: 'last',
+    arabic: 'مَاضِي',
+    pronunciation: '마아디',
+  },
 ]

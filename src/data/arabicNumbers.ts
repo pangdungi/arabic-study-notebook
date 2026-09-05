@@ -7,7 +7,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'zero',
     english: 'zero',
     arabic: 'صِفْر',
-    pronunciation: '시fr',
+    pronunciation: '씨프르',
   },
   {
     id: '1',
@@ -23,7 +23,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'two',
     english: 'two',
     arabic: 'اِثْنَان',
-    pronunciation: '이스nan',
+    pronunciation: '이쓰난',
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'three',
     english: 'three',
     arabic: 'ثَلَاثَة',
-    pronunciation: '살라sa',
+    pronunciation: '살라사',
   },
   {
     id: '4',
@@ -39,7 +39,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'four',
     english: 'four',
     arabic: 'أَرْبَعَة',
-    pronunciation: '아rbaca',
+    pronunciation: '아르바아',
   },
   {
     id: '5',
@@ -47,7 +47,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'five',
     english: 'five',
     arabic: 'خَمْسَة',
-    pronunciation: 'hamsa',
+    pronunciation: '함사',
   },
   {
     id: '6',
@@ -55,7 +55,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'six',
     english: 'six',
     arabic: 'سِتَّة',
-    pronunciation: 'sitta',
+    pronunciation: '싯타',
   },
   {
     id: '7',
@@ -63,7 +63,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'seven',
     english: 'seven',
     arabic: 'سَبْعَة',
-    pronunciation: 'sabca',
+    pronunciation: '사바아',
   },
   {
     id: '8',
@@ -71,7 +71,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'eight',
     english: 'eight',
     arabic: 'ثَمَانِيَة',
-    pronunciation: 'thamaniya',
+    pronunciation: '타마니야',
   },
   {
     id: '9',
@@ -79,7 +79,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'nine',
     english: 'nine',
     arabic: 'تِسْعَة',
-    pronunciation: 'tisca',
+    pronunciation: '티스아',
   },
   {
     id: '10',
@@ -87,6 +87,6 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'ten',
     english: 'ten',
     arabic: 'عَشَرَة',
-    pronunciation: 'ashara',
+    pronunciation: '아샤라',
   },
 ]

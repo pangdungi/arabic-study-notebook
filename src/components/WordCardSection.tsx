@@ -1,22 +1,36 @@
 import type { StudyCardItem } from '../data/studyCard'
 import { ArabicSpeechButton } from './ArabicSpeechButton'
 import { FlipCard } from './FlipCard'
+import { SectionHeader } from './SectionHeader'
 
 type WordCardSectionProps = {
   title: string
   items: StudyCardItem[]
   onBack: () => void
+  onPractice?: () => void
+  introBullets?: string[]
 }
 
-export function WordCardSection({ title, items, onBack }: WordCardSectionProps) {
+export function WordCardSection({
+  title,
+  items,
+  onBack,
+  onPractice,
+  introBullets,
+}: WordCardSectionProps) {
   return (
     <section className="pronoun-section">
-      <header className="pronoun-section__header">
-        <button type="button" className="study-nav-btn" onClick={onBack}>
-          뒤로
-        </button>
-        <h1 className="pronoun-section__title">{title}</h1>
-      </header>
+      <SectionHeader title={title} onBack={onBack} onPractice={onPractice} />
+
+      {introBullets && introBullets.length > 0 ? (
+        <div className="sp-intro">
+          <ul className="case-vowel-intro__list">
+            {introBullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       <ul className="pronoun-list">
         {items.map((item) => (

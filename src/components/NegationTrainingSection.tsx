@@ -1,21 +1,22 @@
 import type { NegationCategory } from '../data/negation'
 import { ArabicSpeechButton } from './ArabicSpeechButton'
 import { FlipCard } from './FlipCard'
+import { SectionHeader } from './SectionHeader'
 
 type NegationTrainingSectionProps = {
   category: NegationCategory
   onBack: () => void
+  onPractice?: () => void
 }
 
-export function NegationTrainingSection({ category, onBack }: NegationTrainingSectionProps) {
+export function NegationTrainingSection({
+  category,
+  onBack,
+  onPractice,
+}: NegationTrainingSectionProps) {
   return (
     <section className="pronoun-section negation-section">
-      <header className="pronoun-section__header">
-        <button type="button" className="study-nav-btn" onClick={onBack}>
-          뒤로
-        </button>
-        <h1 className="pronoun-section__title">{category.title}</h1>
-      </header>
+      <SectionHeader title={category.title} onBack={onBack} onPractice={onPractice} />
 
       <div className="negation-pattern">
         <div className="negation-particle">

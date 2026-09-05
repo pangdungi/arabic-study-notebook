@@ -34,6 +34,22 @@ export const demonstrativePronouns: StudyCardItem[] = [
     pronunciation: '틸카',
   },
   {
+    id: 'here',
+    korean: '여기',
+    hint: 'here',
+    english: 'here',
+    arabic: 'هُنَا',
+    pronunciation: '후나',
+  },
+  {
+    id: 'here-gulf',
+    korean: '여기 (방언)',
+    hint: 'here (Gulf / UAE)',
+    english: 'here (Gulf / UAE)',
+    arabic: 'هِنِّ',
+    pronunciation: '히니',
+  },
+  {
     id: 'there',
     korean: '저기',
     hint: 'there',

@@ -18,8 +18,12 @@ export function NounToAdverbSection({ onBack, items }: NounToAdverbSectionProps)
       </header>
 
       <p className="noun-adverb-note">
-        끝에 ً(탄윈 팟하)를 붙이면 명사가 시간 부사가 됩니다. morning → in the morning
-        같은 느낌이에요.
+        끝에 탄윈(
+        <span dir="rtl" lang="ar">
+          ـً
+        </span>
+        · 안)를 붙이면 명사가 시간 부사가 됩니다. morning → in the morning 같은
+        느낌이에요.
       </p>
 
       <ul className="pronoun-list noun-adverb-list">

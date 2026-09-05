@@ -146,6 +146,22 @@ export const hospitalNouns: StudyCardItem[] = [
     pronunciation: '아시아',
   },
   {
+    id: 'endoscopy',
+    korean: '내시경',
+    hint: 'endoscopy',
+    english: 'endoscopy',
+    arabic: 'مَنْظَار',
+    pronunciation: '문다르',
+  },
+  {
+    id: 'ultrasound',
+    korean: '초음파',
+    hint: 'ultrasound',
+    english: 'ultrasound',
+    arabic: 'سُونَار',
+    pronunciation: '수나',
+  },
+  {
     id: 'room',
     korean: '방',
     hint: 'room',
@@ -160,5 +176,13 @@ export const hospitalNouns: StudyCardItem[] = [
     english: 'pillow',
     arabic: 'وِسَادَة',
     pronunciation: '위사다',
+  },
+  {
+    id: 'relationship',
+    korean: '관계',
+    hint: 'relationship, relation',
+    english: 'relationship, relation',
+    arabic: 'عَلَاقَة',
+    pronunciation: '알라카',
   },
 ]

@@ -34,6 +34,22 @@ export const peopleNouns: StudyCardItem[] = [
     pronunciation: '이므라아',
   },
   {
+    id: 'teacher-f',
+    korean: '여선생님',
+    hint: 'teacher (f.)',
+    english: 'teacher (f.)',
+    arabic: 'مُعَلِّمَة',
+    pronunciation: '무알리마',
+  },
+  {
+    id: 'teacher-m',
+    korean: '남선생님',
+    hint: 'teacher (m.)',
+    english: 'teacher (m.)',
+    arabic: 'مُعَلِّم',
+    pronunciation: '무알림',
+  },
+  {
     id: 'job',
     korean: '직업',
     hint: 'job, profession',

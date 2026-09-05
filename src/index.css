@@ -26,6 +26,20 @@ body {
   background: var(--bg);
 }
 
+[lang='ar'],
+.pronoun-card__arabic,
+.practice-card__arabic,
+.case-vowel-guide__mark-arabic,
+.case-vowel-triplet__arabic,
+.case-vowel-triplet__ending-mark,
+.def-article-rule__demo-arabic,
+.def-article-table__arabic,
+.sp-table__arabic,
+.alphabet-card__isolated,
+.alphabet-forms__glyph {
+  font-family: 'Noto Naskh Arabic', 'Geeza Pro', 'Arial', sans-serif;
+}
+
 .study-page {
   min-height: 100%;
   padding: 24px 16px;
@@ -150,6 +164,86 @@ body {
   background: var(--btn-hover-bg);
 }
 
+.study-nav-btn--review {
+  grid-column: 1 / -1;
+  font-weight: 600;
+}
+
+.daily-review-intro {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  background: var(--btn-bg);
+}
+
+.daily-review-intro__summary {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.daily-review-intro__complete {
+  margin: 12px 0 0;
+  font-weight: 600;
+  color: #047857;
+}
+
+.daily-review-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.daily-review-progress__track {
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.daily-review-progress__bar {
+  height: 100%;
+  border-radius: 999px;
+  background: #2563eb;
+  transition: width 0.2s ease;
+}
+
+.daily-review-card__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.daily-review-card--done {
+  opacity: 0.72;
+}
+
+.daily-review-card__done-btn {
+  display: block;
+  width: calc(100% - 28px);
+  margin: 8px auto 0;
+  padding: 8px 12px;
+  border: 1px solid var(--btn-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.daily-review-card__done-btn--active {
+  border-color: #86efac;
+  background: #ecfdf5;
+  color: #047857;
+  font-weight: 600;
+}
+
 .study-submenu__header {
   display: flex;
   align-items: center;
@@ -181,9 +275,15 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr));
   gap: 12px;
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  .pronoun-list {
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  }
 }
 
 @media (max-width: 639px) {
@@ -249,6 +349,11 @@ body {
 
 .speech-btn:hover {
   background: var(--btn-hover-bg);
+}
+
+.speech-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 .speech-btn__icon {
@@ -363,174 +468,36 @@ body {
   max-width: 720px;
 }
 
-.suffix-pronoun-note {
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4b5563;
+.suffix-pronoun-section .sp-table__row--suffix-ref {
+  grid-template-columns: 0.85fr 1fr 1fr;
 }
 
-.suffix-pronoun-picker {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 16px;
+.suffix-pronoun-section .sp-table__row--suffix-example {
+  grid-template-columns: 0.75fr 1fr 1.25fr;
 }
 
-@media (min-width: 640px) {
-  .suffix-pronoun-picker {
-    display: flex;
-    flex-wrap: wrap;
+@media (max-width: 640px) {
+  .suffix-pronoun-section .sp-table__row--suffix-ref > span:nth-child(2)::before {
+    content: '독립형 · 발음';
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
   }
-}
 
-.suffix-pronoun-picker__btn {
-  appearance: none;
-  width: 100%;
-  border: 1px solid var(--btn-border);
-  border-radius: 10px;
-  background: var(--btn-bg);
-  color: var(--text);
-  padding: 10px 12px;
-  font: inherit;
-  cursor: pointer;
-  text-align: left;
-  min-width: 0;
-}
-
-@media (min-width: 640px) {
-  .suffix-pronoun-picker__btn {
-    width: auto;
-    min-width: 88px;
+  .suffix-pronoun-section .sp-table__row--suffix-ref > span:nth-child(3)::before {
+    content: '접미사 · 발음';
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
   }
-}
 
-.suffix-pronoun-picker__btn--active {
-  border-color: #9ca3af;
-  background: #eceef1;
-}
-
-.suffix-pronoun-picker__label {
-  display: block;
-  font-weight: 600;
-}
-
-.suffix-pronoun-picker__hint {
-  display: block;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-.suffix-pronoun-picker__standalone {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.9rem;
-  color: #4b5563;
-}
-
-.suffix-pronoun-panel {
-  display: grid;
-  gap: 12px;
-}
-
-@media (min-width: 640px) {
-  .suffix-pronoun-panel {
-    grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
-    align-items: start;
+  .suffix-pronoun-section .sp-table__row--suffix-example .sp-table__label::before {
+    content: '인칭';
   }
-}
-
-.suffix-pronoun-panel__suffix,
-.suffix-pronoun-panel__examples {
-  border: 1px solid var(--btn-border);
-  border-radius: 12px;
-  background: var(--btn-bg);
-  padding: 16px;
-}
-
-.suffix-pronoun-panel__heading {
-  margin: 0 0 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #6b7280;
-}
-
-.suffix-pronoun-panel__standalone {
-  margin: 0;
-  font-size: 1.75rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.suffix-pronoun-panel__standalone-pron {
-  margin: 4px 0 0;
-  text-align: center;
-  color: #4b5563;
-}
-
-.suffix-pronoun-panel__arrow {
-  margin: 14px 0 10px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-.suffix-pronoun-panel__suffix-arabic {
-  margin: 0;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.suffix-pronoun-panel__suffix-pron {
-  margin: 6px 0 0;
-  font-size: 1.25rem;
-  text-align: center;
-  color: #4b5563;
-}
-
-.suffix-pronoun-examples {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.suffix-pronoun-example {
-  position: relative;
-  border: 1px solid var(--btn-border);
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 14px 48px 14px 14px;
-}
-
-.suffix-pronoun-example__korean {
-  margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.suffix-pronoun-example__hint {
-  margin: 2px 0 8px;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-.suffix-pronoun-example__arabic {
-  margin: 0;
-  font-size: 1.75rem;
-  line-height: 1.2;
-}
-
-.suffix-pronoun-example__pron {
-  margin: 4px 0 0;
-  color: #4b5563;
-}
-
-.suffix-pronoun-example .speech-btn {
-  top: 8px;
-  right: 8px;
 }
 
 .negation-pattern {
@@ -734,6 +701,216 @@ body {
   color: #4b5563;
 }
 
+.case-vowel-guide {
+  margin-bottom: 16px;
+}
+
+.case-vowel-guide__title {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.case-vowel-guide__table {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.case-vowel-guide__row {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 0.9fr 0.9fr 1.1fr;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--btn-border);
+}
+
+.case-vowel-guide__row:first-child {
+  border-top: none;
+}
+
+.case-vowel-guide__row--head {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.case-vowel-guide__case {
+  font-weight: 600;
+}
+
+.case-vowel-guide__role,
+.case-vowel-guide__mark-pron,
+.case-vowel-triplet__role,
+.case-vowel-triplet__ending-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.case-vowel-guide__mark-arabic {
+  display: block;
+  margin-top: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.case-vowel-guide__mark-pron {
+  font-weight: 600;
+  color: #111827;
+}
+
+.case-vowel-triplet__ending {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.case-vowel-triplet__ending-mark {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.case-vowel-intro__note {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.case-vowel-table__caption {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: left;
+  direction: ltr;
+}
+
+.case-vowel-section__heading {
+  margin: 28px 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.case-vowel-section__lead {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.case-vowel-set + .case-vowel-set {
+  margin-top: 20px;
+}
+
+.case-vowel-set__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.case-vowel-set__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.case-vowel-set__badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.case-vowel-triplet {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.case-vowel-triplet__cell {
+  position: relative;
+  padding: 14px 12px 40px;
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  background: var(--btn-bg);
+  text-align: center;
+}
+
+.case-vowel-triplet__case {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.case-vowel-triplet__korean {
+  margin: 0 0 2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.case-vowel-triplet__ending {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.case-vowel-triplet__arabic {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.case-vowel-triplet__pron {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.case-vowel-triplet__cell .speech-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+.case-vowel-practice__meta {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.case-vowel-practice__ending {
+  font-size: 0.95rem;
+  color: #4338ca;
+}
+
+@media (max-width: 640px) {
+  .case-vowel-guide__row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .case-vowel-guide__row--head {
+    display: none;
+  }
+
+  .case-vowel-triplet {
+    grid-template-columns: 1fr;
+  }
+}
+
 .case-vowel-card__label {
   margin: 0 0 6px;
   font-size: 0.8rem;
@@ -743,6 +920,215 @@ body {
 
 .singular-plural-table__row {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sp-intro {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  background: var(--btn-bg);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.sp-intro p {
+  margin: 0;
+}
+
+.sp-table-wrap {
+  margin-bottom: 28px;
+}
+
+.sp-table-wrap__title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.sp-table-wrap__lead {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.sp-table-wrap__marks {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.sp-table-wrap__note {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.sp-table-wrap__note-example {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+}
+
+.sp-table-wrap__note-pair {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.sp-table-wrap__note-arrow {
+  color: #9ca3af;
+}
+
+.sp-table {
+  display: grid;
+  gap: 8px;
+}
+
+.sp-table__row {
+  display: grid;
+  grid-template-columns: 0.9fr 0.7fr 1.1fr 1.4fr;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--btn-border);
+  border-radius: 10px;
+  background: var(--btn-bg);
+  font-size: 0.85rem;
+}
+
+.sp-table__row--head {
+  background: #f9fafb;
+  font-weight: 700;
+  color: #374151;
+}
+
+.sp-table__row--example {
+  position: relative;
+  grid-template-columns: 1fr 1.3fr;
+  padding-right: 44px;
+}
+
+.sp-table__row--example .speech-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+}
+
+.sp-table__row--example .speech-btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sp-table__label,
+.sp-table__korean {
+  font-weight: 600;
+}
+
+.sp-table__hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.sp-table__word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.sp-table__arabic {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sp-table__pron {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4338ca;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .sp-table__row--head {
+    display: none;
+  }
+
+  .sp-table__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sp-table__row--example {
+    padding-right: 12px;
+  }
+
+  .sp-table__row--example .speech-btn {
+    position: static;
+    transform: none;
+    justify-self: end;
+    margin-top: 4px;
+  }
+
+  .sp-table__korean::before {
+    content: '한국어';
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .sp-table__word::before {
+    content: '아랍어 · 발음';
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .sp-table__label::before {
+    content: '구분';
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .sp-table__row:not(.sp-table__row--example) > span:nth-child(2)::before {
+    content: '개수 · ';
+    color: #6b7280;
+    font-weight: 600;
+  }
+
+  .sp-table__row:not(.sp-table__row--example) > span:nth-child(3)::before {
+    content: '붙이는 것 · ';
+    color: #6b7280;
+    font-weight: 600;
+  }
+
+  .sp-table__arabic {
+    font-size: 1.2rem;
+  }
+
+  .sp-table__pron {
+    font-size: 1.05rem;
+  }
 }
 
 @media (max-width: 639px) {
@@ -756,12 +1142,12 @@ body {
 }
 
 .alphabet-list {
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
 }
 
-@media (min-width: 640px) {
+@media (min-width: 900px) {
   .alphabet-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
   }
 }
 
@@ -860,6 +1246,58 @@ body {
   font-size: 0.95rem;
   line-height: 1.55;
   color: #4b5563;
+}
+
+.verb-pattern-intro {
+  margin-bottom: 16px;
+}
+
+.verb-pattern-intro__note {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.verb-pattern-intro__soon {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  color: #9ca3af;
+}
+
+.future-pattern-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.future-pattern-list .flip-card__face {
+  padding: 14px 40px 14px 10px;
+  overflow: hidden;
+}
+
+.future-pattern-card__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  max-width: 100%;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.future-pattern-card__suffix {
+  font-size: 0.88em;
+  color: inherit;
+}
+
+@media (max-width: 639px) {
+  .future-pattern-card__label {
+    font-size: 0.95rem;
+  }
+
+  .future-pattern-card__suffix {
+    font-size: 0.82em;
+  }
 }
 
 .verb-card {
@@ -1032,5 +1470,356 @@ body {
 
   .verb-modal__panel {
     border-radius: 16px;
+  }
+}
+
+.pronoun-section__header--with-actions {
+  flex-wrap: wrap;
+}
+
+.pronoun-section__header--with-actions .pronoun-section__title {
+  flex: 1;
+  min-width: 0;
+}
+
+.study-nav-btn--practice {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.practice-section .practice-intro {
+  margin: 0 0 16px;
+  max-width: 360px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.practice-progress {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.practice-stage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.practice-card-shell {
+  position: relative;
+  width: min(100%, 360px);
+}
+
+.practice-card-shell .flip-card,
+.practice-card-shell .flip-card__inner {
+  min-height: 220px;
+}
+
+.practice-card-shell .speech-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.practice-card__prompt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.04em;
+}
+
+.practice-card__arabic {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.practice-card__korean {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.practice-card__hint {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.practice-card__pronunciation {
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+.practice-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.practice-controls .study-nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.practice-empty {
+  margin: 0;
+  color: #6b7280;
+}
+
+.def-article-intro {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  background: var(--btn-bg);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.def-article-intro p {
+  margin: 0;
+}
+
+.def-article-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.def-article-rule {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--btn-border);
+  background: #fff;
+}
+
+.def-article-rule--sun {
+  border-color: #fed7aa;
+  background: #fffbf5;
+}
+
+.def-article-rule--moon {
+  border-color: #bfdbfe;
+  background: #f8fbff;
+}
+
+.def-article-rule__title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.def-article-rule__letters {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+  color: #374151;
+}
+
+.def-article-rule__steps {
+  margin: 0 0 10px;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.def-article-rule__steps li + li {
+  margin-top: 4px;
+}
+
+.def-article-rule__pattern {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.def-article-rule__demo {
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.def-article-rule__demo-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.def-article-rule__demo-arabic {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.def-article-rule__demo-korean {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.def-article-rule__demo-pron {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.def-article-letter-lists {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.def-article-letter-list__title {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.def-article-letter-list__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.def-article-letter-list__chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+  padding: 5px 7px;
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  background: var(--btn-bg);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.def-article-letter-list__chip span {
+  margin-top: 1px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.def-article-table-wrap + .def-article-table-wrap {
+  margin-top: 24px;
+}
+
+.def-article-table-wrap__title {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.def-article-table {
+  display: grid;
+  gap: 8px;
+}
+
+.def-article-table__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.7fr 0.6fr 1.2fr 0.8fr 1.1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 44px 12px 12px;
+  border: 1px solid var(--btn-border);
+  border-radius: 10px;
+  background: var(--btn-bg);
+  font-size: 0.85rem;
+}
+
+.def-article-table__row--head {
+  background: #f9fafb;
+  font-weight: 700;
+  color: #374151;
+  padding-right: 12px;
+}
+
+.def-article-table__korean {
+  font-weight: 600;
+}
+
+.def-article-table__letter {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.def-article-table__letter-name {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.def-article-table__arabic {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.def-article-table__pron {
+  font-weight: 700;
+  color: #111827;
+}
+
+.def-article-table__how {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+.def-article-table__row .speech-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+}
+
+.def-article-table__row .speech-btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 640px) {
+  .def-article-rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .def-article-table__row--head {
+    display: none;
+  }
+
+  .def-article-table__row {
+    grid-template-columns: 1fr 1fr;
+    padding-right: 12px;
+  }
+
+  .def-article-table__row .speech-btn {
+    position: static;
+    transform: none;
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: 4px;
+  }
+
+  .def-article-table__arabic {
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+  }
+
+  .def-article-table__how {
+    grid-column: 1 / -1;
   }
 }

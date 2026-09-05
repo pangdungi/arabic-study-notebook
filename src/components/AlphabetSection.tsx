@@ -1,8 +1,10 @@
 import { arabicAlphabet } from '../data/arabicAlphabet'
 import { ArabicSpeechButton } from './ArabicSpeechButton'
+import { SectionHeader } from './SectionHeader'
 
 type AlphabetSectionProps = {
   onBack: () => void
+  onPractice?: () => void
 }
 
 const formLabels = [
@@ -12,15 +14,10 @@ const formLabels = [
   { key: 'final' as const, label: '끝' },
 ]
 
-export function AlphabetSection({ onBack }: AlphabetSectionProps) {
+export function AlphabetSection({ onBack, onPractice }: AlphabetSectionProps) {
   return (
     <section className="pronoun-section alphabet-section">
-      <header className="pronoun-section__header">
-        <button type="button" className="study-nav-btn" onClick={onBack}>
-          뒤로
-        </button>
-        <h1 className="pronoun-section__title">아랍어 알파벳</h1>
-      </header>
+      <SectionHeader title="아랍어 알파벳" onBack={onBack} onPractice={onPractice} />
 
       <div className="alphabet-note">
         <p>

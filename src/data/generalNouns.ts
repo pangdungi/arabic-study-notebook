@@ -25,4 +25,12 @@ export const generalNouns: StudyCardItem[] = [
     arabic: 'حُلْم',
     pronunciation: '훌룸',
   },
+  {
+    id: 'class-lesson',
+    korean: '수업',
+    hint: 'class, lesson',
+    english: 'class, lesson',
+    arabic: 'مُحَاضَرَة',
+    pronunciation: '무하다라',
+  },
 ]

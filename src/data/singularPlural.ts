@@ -6,6 +6,13 @@ export type SingularPluralDrillItem = {
   pronunciation: string
 }
 
+export type SingularPluralNoteExample = {
+  fromArabic: string
+  fromPronunciation: string
+  toArabic: string
+  toPronunciation: string
+}
+
 export type SingularPluralGroup = {
   id: string
   title: string
@@ -15,6 +22,7 @@ export type SingularPluralGroup = {
   suffixKorean: string
   roleKorean: string
   note: string
+  noteExample?: SingularPluralNoteExample
   items: SingularPluralDrillItem[]
 }
 
@@ -22,19 +30,42 @@ export const singularPluralIntro = {
   title: '단복수',
   summary:
     '아랍어 명사는 개수에 따라 단수·쌍수(2개)·복수로 형태가 바뀝니다. 복수는 불규칙(깨진 복수)도 많지만, 여기서는 규칙적으로 만들 수 있는 쌍수·남성 규칙복수·여성 규칙복수를 다룹니다.',
-  bullets: [
-    '단수 — 하나. 기본형 그대로 (مُفْرَد / 무프라드).',
-    '쌍수 — 정확히 둘. 끝에 ـَانِ(아니, 주격) · ـَيْنِ(아이니, 목적·소유격)을 붙입니다.',
-    '남성 규칙복수 — 주로 남성·사람 명사. ـُونَ(우나, 주격) · ـِينَ(이나, 목적·소유격).',
-    '여성 규칙복수 — ة(타 마르부타)를 빼고 ـَات(아트)을 붙입니다.',
-  ],
-  tableExamples: [
-    { arabic: 'كِتَاب', pronunciation: '키탑' },
-    { arabic: 'كِتَابَانِ', pronunciation: '키타바니' },
-    { arabic: 'مُعَلِّمُونَ', pronunciation: '무알리무나' },
-    { arabic: 'مُعَلِّمَات', pronunciation: '무알리마트' },
-  ],
 }
+
+export const singularPluralOverview = [
+  {
+    id: 'singular',
+    label: '단수',
+    countKorean: '하나',
+    suffixKorean: '없음',
+    exampleArabic: 'كِتَاب',
+    examplePron: '키탑',
+  },
+  {
+    id: 'dual',
+    label: '쌍수',
+    countKorean: '둘',
+    suffixKorean: '아니(주격) · 아이니(목적·소유)',
+    exampleArabic: 'كِتَابَانِ',
+    examplePron: '키타바니',
+  },
+  {
+    id: 'masculine-plural',
+    label: '남성 규칙복수',
+    countKorean: '셋 이상',
+    suffixKorean: '우나(주격) · 이나(목적·소유)',
+    exampleArabic: 'مُعَلِّمُونَ',
+    examplePron: '무알리무나',
+  },
+  {
+    id: 'feminine-plural',
+    label: '여성 규칙복수',
+    countKorean: '셋 이상',
+    suffixKorean: '아트 (ة 빼고)',
+    exampleArabic: 'مُعَلِّمَات',
+    examplePron: '무알리마트',
+  },
+]
 
 export const singularPluralGroups: SingularPluralGroup[] = [
   {
@@ -85,7 +116,13 @@ export const singularPluralGroups: SingularPluralGroup[] = [
     suffixMarks: 'ـَانِ · ـَيْنِ',
     suffixKorean: '아니(주격) · 아이니(목적·소유격)',
     roleKorean: '둘',
-    note: '여성 명사(ة)는 ت를 넣고 쌍수 접미사를 붙입니다. 예: مُعَلِّمَة → مُعَلِّمَتَانِ.',
+    note: '여성 명사(ة)는 ت를 넣고 쌍수 접미사를 붙입니다.',
+    noteExample: {
+      fromArabic: 'مُعَلِّمَة',
+      fromPronunciation: '무알리마',
+      toArabic: 'مُعَلِّمَتَانِ',
+      toPronunciation: '무알리마타니',
+    },
     items: [
       {
         id: 'dual-book-nom',
@@ -165,7 +202,13 @@ export const singularPluralGroups: SingularPluralGroup[] = [
     suffixMarks: 'ـَات',
     suffixKorean: '아트',
     roleKorean: '셋 이상 — ة(타 마르부타)로 끝나는 여성 명사',
-    note: '끝의 ة(타 마르부타)를 빼고 ـَات(아트)을 붙입니다. 예: سَاعَة → سَاعَات.',
+    note: '끝의 ة(타 마르부타)를 빼고 ـَات(아트)을 붙입니다.',
+    noteExample: {
+      fromArabic: 'سَاعَة',
+      fromPronunciation: '사아',
+      toArabic: 'سَاعَات',
+      toPronunciation: '사아-아트',
+    },
     items: [
       {
         id: 'fpl-hour',

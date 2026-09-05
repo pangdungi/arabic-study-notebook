@@ -1,4 +1,4 @@
-import { speakArabic } from '../lib/speakArabic'
+import { speakArabic, sanitizeArabicSpeechText } from '../lib/speakArabic'
 
 type ArabicSpeechButtonProps = {
   text: string
@@ -6,15 +6,18 @@ type ArabicSpeechButtonProps = {
 }
 
 export function ArabicSpeechButton({ text, label }: ArabicSpeechButtonProps) {
+  const speechText = sanitizeArabicSpeechText(text)
+
   return (
     <button
       type="button"
       className="speech-btn"
       aria-label={label}
       title={label}
+      disabled={!speechText}
       onClick={(event) => {
         event.stopPropagation()
-        speakArabic(text)
+        speakArabic(speechText)
       }}
     >
       <svg

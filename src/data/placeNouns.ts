@@ -47,7 +47,7 @@ export const placeNouns: StudyCardItem[] = [
     hint: 'high school',
     english: 'high school',
     arabic: 'مَدْرَسَة ثَانَوِيَّة',
-    pronunciation: '마드라사 타나wiya',
+    pronunciation: '마드라사 타나위야',
   },
   {
     id: 'company',

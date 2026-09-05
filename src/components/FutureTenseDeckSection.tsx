@@ -4,25 +4,32 @@ import { futureTenseIntro, futureVerbs } from '../data/futureTense'
 import { ArabicSpeechButton } from './ArabicSpeechButton'
 import { FlipCard } from './FlipCard'
 import { FutureConjugationModal } from './FutureConjugationModal'
+import { SectionHeader } from './SectionHeader'
 
 type FutureTenseDeckSectionProps = {
   onBack: () => void
+  onPractice?: () => void
 }
 
-export function FutureTenseDeckSection({ onBack }: FutureTenseDeckSectionProps) {
+export function FutureTenseDeckSection({ onBack, onPractice }: FutureTenseDeckSectionProps) {
   const [modalVerb, setModalVerb] = useState<FutureVerbItem | null>(null)
 
   return (
     <section className="pronoun-section verb-deck-section">
-      <header className="pronoun-section__header">
-        <button type="button" className="study-nav-btn" onClick={onBack}>
-          뒤로
-        </button>
-        <h1 className="pronoun-section__title">{futureTenseIntro.title}</h1>
-      </header>
+      <SectionHeader title={futureTenseIntro.title} onBack={onBack} onPractice={onPractice} />
 
       <div className="case-vowel-intro">
-        <p className="case-vowel-intro__summary">{futureTenseIntro.summary}</p>
+        <p className="case-vowel-intro__summary">
+          아랍어 미래는 별도 어미가 아니라{' '}
+          <strong dir="rtl" lang="ar">
+            سَ
+          </strong>
+          (싸, 짧은·가까운 미래) 또는{' '}
+          <strong dir="rtl" lang="ar">
+            سَوْفَ
+          </strong>
+          (싸우파, 긴·먼 미래)를 <strong>현재형 동사 앞</strong>에 붙여 만듭니다.
+        </p>
         <ul className="case-vowel-intro__list">
           {futureTenseIntro.bullets.map((bullet) => (
             <li key={bullet}>{bullet}</li>
@@ -31,14 +38,24 @@ export function FutureTenseDeckSection({ onBack }: FutureTenseDeckSectionProps) 
       </div>
 
       <ul className="pronoun-list future-pattern-list">
-        {futureTenseIntro.patterns.map((pattern) => (
+        {futureTenseIntro.patterns.map((pattern) => {
+          const [prefix, suffix = ''] = pattern.korean.split('+').map((part) => part.trim())
+
+          return (
           <li key={pattern.id} className="study-card">
             <FlipCard
               ariaLabel={pattern.korean}
               front={
                 <>
-                  <span className="case-vowel-card__label">패턴</span>
-                  <span className="pronoun-card__korean">{pattern.korean}</span>
+                  <span className="case-vowel-card__label">{pattern.timeKorean}</span>
+                  <span className="future-pattern-card__label pronoun-card__korean">
+                    <span dir="rtl" lang="ar">
+                      {prefix}
+                    </span>
+                    {suffix ? (
+                      <span className="future-pattern-card__suffix">+ {suffix}</span>
+                    ) : null}
+                  </span>
                   <span className="pronoun-card__hint">({pattern.hint})</span>
                 </>
               }
@@ -54,7 +71,8 @@ export function FutureTenseDeckSection({ onBack }: FutureTenseDeckSectionProps) 
             />
             <ArabicSpeechButton text={pattern.arabic} label={`${pattern.korean} 아랍어 듣기`} />
           </li>
-        ))}
+          )
+        })}
       </ul>
 
       <p className="verb-deck-note">
