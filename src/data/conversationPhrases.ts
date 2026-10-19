@@ -234,6 +234,22 @@ export const conversationPhrases: StudyCardItem[] = [
     pronunciation: '마 하 쿨',
   },
   {
+    id: 'will-remove-hair-m',
+    korean: '털 제거할게요 (남)',
+    hint: 'I will remove your hair (to a man)',
+    english: 'I will remove your hair (to a man)',
+    arabic: 'سَأُزِيلُ شَعْرَكَ',
+    pronunciation: '싸우질루 샤르악',
+  },
+  {
+    id: 'will-remove-hair-f',
+    korean: '털 제거할게요 (여)',
+    hint: 'I will remove your hair (to a woman)',
+    english: 'I will remove your hair (to a woman)',
+    arabic: 'سَأُزِيلُ شَعْرَكِ',
+    pronunciation: '싸우질루 샤르키',
+  },
+  {
     id: 'any-questions',
     korean: '질문 있어?',
     hint: 'do you have a question?',
