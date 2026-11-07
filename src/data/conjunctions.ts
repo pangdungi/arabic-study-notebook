@@ -92,10 +92,10 @@ export const conjunctions: StudyCardItem[] = [
   {
     id: 'then',
     korean: '그다음',
-    hint: '이단',
+    hint: '쑴마',
     english: 'then',
     arabic: 'ثُمَّ',
-    pronunciation: '이단',
+    pronunciation: '쑴마',
   },
   {
     id: 'while',

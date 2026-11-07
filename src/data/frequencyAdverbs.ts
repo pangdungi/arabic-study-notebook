@@ -28,10 +28,10 @@ export const frequencyAdverbs: StudyCardItem[] = [
   {
     id: 'often',
     korean: '자주',
-    hint: '카시란',
+    hint: '카싸란',
     english: 'often',
     arabic: 'كَثِيرًا',
-    pronunciation: '카시란',
+    pronunciation: '카싸란',
   },
   {
     id: 'usually',

@@ -95,7 +95,7 @@ export const timeNouns: StudyCardItem[] = [
     hint: "2 o'clock",
     english: "2 o'clock",
     arabic: 'السَّاعَةُ الثَّانِيَة',
-    pronunciation: '알싸아투 않따니야',
+    pronunciation: '알싸아투 않싸니야',
   },
   {
     id: 'three-hours',
@@ -103,7 +103,7 @@ export const timeNouns: StudyCardItem[] = [
     hint: '3 hours',
     english: '3 hours',
     arabic: 'ثَلَاثُ سَاعَات',
-    pronunciation: '쑬라쓰 사아-아트',
+    pronunciation: '싸라쓰 사아-아트',
   },
   {
     id: 'three-oclock',
@@ -111,7 +111,7 @@ export const timeNouns: StudyCardItem[] = [
     hint: "3 o'clock",
     english: "3 o'clock",
     arabic: 'السَّاعَةُ الثَّالِثَة',
-    pronunciation: '알싸아투 않따리샤',
+    pronunciation: '알싸아투 않싸리샤',
   },
   {
     id: 'day',

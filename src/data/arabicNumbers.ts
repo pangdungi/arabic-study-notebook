@@ -23,7 +23,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'two',
     english: 'two',
     arabic: 'اِثْنَان',
-    pronunciation: '이쓰난',
+    pronunciation: '이싸난',
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'three',
     english: 'three',
     arabic: 'ثَلَاثَة',
-    pronunciation: '살라사',
+    pronunciation: '싸라싸',
   },
   {
     id: '4',
@@ -71,7 +71,7 @@ export const arabicNumbers: StudyCardItem[] = [
     hint: 'eight',
     english: 'eight',
     arabic: 'ثَمَانِيَة',
-    pronunciation: '타마니야',
+    pronunciation: '싸마니야',
   },
   {
     id: '9',

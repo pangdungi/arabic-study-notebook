@@ -193,4 +193,20 @@ export const hospitalNouns: StudyCardItem[] = [
     arabic: 'عَلَاقَة',
     pronunciation: '알라카',
   },
+  {
+    id: 'dont-move-m',
+    korean: '움직이지 마세요 (남)',
+    hint: "don't move (to a man)",
+    english: "don't move (to a man)",
+    arabic: 'لَا تَتَحَرَّكْ',
+    pronunciation: '라 타타하릭',
+  },
+  {
+    id: 'dont-move-f',
+    korean: '움직이지 마세요 (여)',
+    hint: "don't move (to a woman)",
+    english: "don't move (to a woman)",
+    arabic: 'لَا تَتَحَرَّكِي',
+    pronunciation: '라 타타하리키',
+  },
 ]

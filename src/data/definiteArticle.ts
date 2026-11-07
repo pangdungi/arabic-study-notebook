@@ -56,7 +56,7 @@ export const definiteArticlePronunciationRules = {
 
 export const sunLetters: DefiniteArticleLetter[] = [
   { id: 'sun-ta', letterClass: 'sun', letterArabic: 'ت', letterKorean: '타' },
-  { id: 'sun-tha', letterClass: 'sun', letterArabic: 'ث', letterKorean: '사' },
+  { id: 'sun-tha', letterClass: 'sun', letterArabic: 'ث', letterKorean: '싸(Th)' },
   { id: 'sun-dal', letterClass: 'sun', letterArabic: 'د', letterKorean: '달' },
   { id: 'sun-dhal', letterClass: 'sun', letterArabic: 'ذ', letterKorean: '달' },
   { id: 'sun-ra', letterClass: 'sun', letterArabic: 'ر', letterKorean: '라' },

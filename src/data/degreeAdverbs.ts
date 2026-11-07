@@ -52,18 +52,18 @@ export const degreeAdverbs: StudyCardItem[] = [
   {
     id: 'much',
     korean: '많이',
-    hint: '카시란',
+    hint: '카싸란',
     english: 'much, a lot',
     arabic: 'كَثِيرًا',
-    pronunciation: '카시란',
+    pronunciation: '카싸란',
   },
   {
     id: 'too-much',
     korean: '너무',
-    hint: '악사르 미날라짐',
+    hint: '악싸르 미날라짐',
     english: 'too (much)',
     arabic: 'أَكْثَرَ مِنَ اللّازِم',
-    pronunciation: '악사르 미날라짐',
+    pronunciation: '악싸르 미날라짐',
   },
   {
     id: 'extremely',

@@ -15,7 +15,7 @@ export const weekdayNouns: StudyCardItem[] = [
     hint: 'Monday',
     english: 'Monday',
     arabic: 'الْإِثْنَيْن',
-    pronunciation: '알이쓰나인',
+    pronunciation: '알이싸나인',
   },
   {
     id: 'tuesday',
@@ -23,7 +23,7 @@ export const weekdayNouns: StudyCardItem[] = [
     hint: 'Tuesday',
     english: 'Tuesday',
     arabic: 'الثُّلَاثَاء',
-    pronunciation: '앗쑬라타',
+    pronunciation: '앗싸라타',
   },
   {
     id: 'wednesday',

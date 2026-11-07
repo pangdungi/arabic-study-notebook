@@ -42,9 +42,9 @@ export const arabicAlphabet: ArabicAlphabetLetter[] = [
   },
   {
     id: 'tha',
-    nameKorean: '사',
+    nameKorean: '싸(Th)',
     nameEnglish: 'tha',
-    pronunciation: '사',
+    pronunciation: '싸',
     connectsToNext: true,
     forms: { isolated: 'ث', initial: 'ثـ', medial: 'ـثـ', final: 'ـث' },
   },
