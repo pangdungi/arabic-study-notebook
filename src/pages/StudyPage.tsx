@@ -111,7 +111,11 @@ type PracticeSession = {
   variant?: 'arabic-first' | 'korean-first'
 }
 
-export function StudyPage() {
+type StudyPageProps = {
+  onExitToLanguages?: () => void
+}
+
+export function StudyPage({ onExitToLanguages }: StudyPageProps = {}) {
   const [view, setView] = useState<StudyView>('home')
   const [negationCategoryId, setNegationCategoryId] = useState(negationCategories[0]?.id ?? '')
   const [verbFormId, setVerbFormId] = useState(verbPatternForms[0]?.id ?? 'form-1')
@@ -794,6 +798,16 @@ export function StudyPage() {
 
   return (
     <main className="study-page">
+      {onExitToLanguages ? (
+        <button
+          type="button"
+          className="study-nav-btn study-nav-btn--languages"
+          onClick={onExitToLanguages}
+        >
+          ← 언어 선택
+        </button>
+      ) : null}
+
       <div className="study-search">
         <label className="study-search__label" htmlFor="study-search-input">
           검색

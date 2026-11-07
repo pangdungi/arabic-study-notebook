@@ -1,7 +1,7 @@
 {
-  "name": "아랍어 공부장",
-  "short_name": "아랍어 공부장",
-  "description": "아랍어 학습 플립 카드",
+  "name": "언어 공부장",
+  "short_name": "언어 공부장",
+  "description": "영어 · 일본어 · 아랍어 학습 플립 카드",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
