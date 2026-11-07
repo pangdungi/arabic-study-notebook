@@ -60,7 +60,10 @@ function ReviewCard({
           </>
         }
       />
-      <ArabicSpeechButton text={item.arabic} label={`${item.korean} 아랍어 듣기`} />
+      <ArabicSpeechButton
+        text={item.speechArabic ?? item.arabic}
+        label={`${item.korean} 아랍어 듣기`}
+      />
       {verb ? (
         <button
           type="button"

@@ -3,7 +3,7 @@ import { directionAdverbs } from '../data/directionAdverbs'
 import { frequencyAdverbs } from '../data/frequencyAdverbs'
 import { restrictiveAdverbs } from '../data/restrictiveAdverbs'
 import { timeAdverbs } from '../data/timeAdverbs'
-import { arabicAlphabet } from '../data/arabicAlphabet'
+import { arabicAlphabet, speechArabicForLetter } from '../data/arabicAlphabet'
 import { arabicNumbers } from '../data/arabicNumbers'
 import { getCaseVowelDrillItems } from '../data/caseVowels'
 import { getDefiniteArticleSearchItems } from '../data/definiteArticle'
@@ -37,6 +37,7 @@ export type SearchEntry = {
   korean: string
   hint?: string
   arabic: string
+  speechArabic?: string
   pronunciation: string
   verbId?: string
   futureVerbId?: string
@@ -176,6 +177,7 @@ function buildIndex(): IndexedEntry[] {
       korean: letter.nameKorean,
       hint: letter.nameEnglish,
       arabic: letter.forms.isolated,
+      speechArabic: speechArabicForLetter(letter),
       pronunciation: letter.pronunciation,
       searchText: buildSearchText(
         '아랍어 알파벳',

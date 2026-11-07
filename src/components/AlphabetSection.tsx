@@ -1,4 +1,4 @@
-import { arabicAlphabet } from '../data/arabicAlphabet'
+import { arabicAlphabet, speechArabicForLetter } from '../data/arabicAlphabet'
 import { ArabicSpeechButton } from './ArabicSpeechButton'
 import { SectionHeader } from './SectionHeader'
 
@@ -69,7 +69,7 @@ export function AlphabetSection({ onBack, onPractice }: AlphabetSectionProps) {
             </div>
 
             <ArabicSpeechButton
-              text={letter.forms.isolated}
+              text={speechArabicForLetter(letter)}
               label={`${letter.nameKorean}(${letter.pronunciation}) 발음 듣기`}
             />
           </li>

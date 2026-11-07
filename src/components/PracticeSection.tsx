@@ -112,7 +112,10 @@ export function PracticeSection({
               )
             }
           />
-          <ArabicSpeechButton text={card.arabic} label={`${card.korean} 아랍어 듣기`} />
+          <ArabicSpeechButton
+            text={card.speechArabic ?? card.arabic}
+            label={`${card.korean} 아랍어 듣기`}
+          />
         </div>
       </div>
 

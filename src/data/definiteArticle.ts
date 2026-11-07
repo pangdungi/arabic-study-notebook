@@ -63,10 +63,10 @@ export const sunLetters: DefiniteArticleLetter[] = [
   { id: 'sun-zay', letterClass: 'sun', letterArabic: 'ز', letterKorean: '자' },
   { id: 'sun-sin', letterClass: 'sun', letterArabic: 'س', letterKorean: '신' },
   { id: 'sun-shin', letterClass: 'sun', letterArabic: 'ش', letterKorean: '쉰' },
-  { id: 'sun-sad', letterClass: 'sun', letterArabic: 'ص', letterKorean: '솟' },
-  { id: 'sun-dad', letterClass: 'sun', letterArabic: 'ض', letterKorean: '돗' },
+  { id: 'sun-sad', letterClass: 'sun', letterArabic: 'ص', letterKorean: '솨드' },
+  { id: 'sun-dad', letterClass: 'sun', letterArabic: 'ض', letterKorean: '돠드' },
   { id: 'sun-ta-emph', letterClass: 'sun', letterArabic: 'ط', letterKorean: '토' },
-  { id: 'sun-za', letterClass: 'sun', letterArabic: 'ظ', letterKorean: '조' },
+  { id: 'sun-za', letterClass: 'sun', letterArabic: 'ظ', letterKorean: '똬' },
   { id: 'sun-lam', letterClass: 'sun', letterArabic: 'ل', letterKorean: '람' },
   { id: 'sun-nun', letterClass: 'sun', letterArabic: 'ن', letterKorean: '눈' },
 ]
@@ -84,7 +84,7 @@ export const moonLetters: DefiniteArticleLetter[] = [
   { id: 'moon-kaf', letterClass: 'moon', letterArabic: 'ك', letterKorean: '카프' },
   { id: 'moon-mim', letterClass: 'moon', letterArabic: 'م', letterKorean: '밈' },
   { id: 'moon-ha-end', letterClass: 'moon', letterArabic: 'ه', letterKorean: '하' },
-  { id: 'moon-waw', letterClass: 'moon', letterArabic: 'و', letterKorean: '와' },
+  { id: 'moon-waw', letterClass: 'moon', letterArabic: 'و', letterKorean: '와우' },
   { id: 'moon-ya', letterClass: 'moon', letterArabic: 'ي', letterKorean: '야' },
 ]
 

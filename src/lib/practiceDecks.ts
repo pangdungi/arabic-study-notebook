@@ -1,4 +1,5 @@
 import type { ArabicAlphabetLetter } from '../data/arabicAlphabet'
+import { speechArabicForLetter } from '../data/arabicAlphabet'
 import type { DefiniteArticleExample } from '../data/definiteArticle'
 import type { CaseVowelDrillItem } from '../data/caseVowels'
 import type { FutureVerbItem } from '../data/futureTense'
@@ -70,6 +71,7 @@ export function fromAlphabet(items: ArabicAlphabetLetter[]): PracticeCard[] {
   return items.map((item) => ({
     id: item.id,
     arabic: item.forms.isolated,
+    speechArabic: speechArabicForLetter(item),
     korean: item.nameKorean,
     pronunciation: item.pronunciation,
     hint: item.nameEnglish,

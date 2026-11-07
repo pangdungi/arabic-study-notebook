@@ -122,23 +122,23 @@ export const arabicAlphabet: ArabicAlphabetLetter[] = [
   },
   {
     id: 'sad',
-    nameKorean: '솟',
+    nameKorean: '솨드',
     nameEnglish: 'sad',
-    pronunciation: '솟',
+    pronunciation: '솨드',
     connectsToNext: true,
     forms: { isolated: 'ص', initial: 'صـ', medial: 'ـصـ', final: 'ـص' },
   },
   {
     id: 'dad',
-    nameKorean: '돗',
+    nameKorean: '돠드',
     nameEnglish: 'dad',
-    pronunciation: '돗',
+    pronunciation: '돠드',
     connectsToNext: true,
     forms: { isolated: 'ض', initial: 'ضـ', medial: 'ـضـ', final: 'ـض' },
   },
   {
     id: 'ta-emphatic',
-    nameKorean: '토',
+    nameKorean: '뜨아',
     nameEnglish: 'ta',
     pronunciation: '뜨아',
     connectsToNext: true,
@@ -146,7 +146,7 @@ export const arabicAlphabet: ArabicAlphabetLetter[] = [
   },
   {
     id: 'za',
-    nameKorean: '조',
+    nameKorean: '똬',
     nameEnglish: 'za',
     pronunciation: '똬',
     connectsToNext: true,
@@ -226,9 +226,9 @@ export const arabicAlphabet: ArabicAlphabetLetter[] = [
   },
   {
     id: 'waw',
-    nameKorean: '와',
+    nameKorean: '와우',
     nameEnglish: 'waw',
-    pronunciation: '와',
+    pronunciation: '와우(와위우)',
     connectsToNext: false,
     forms: { isolated: 'و', initial: 'و', medial: null, final: 'ـو' },
   },
@@ -241,3 +241,39 @@ export const arabicAlphabet: ArabicAlphabetLetter[] = [
     forms: { isolated: 'ي', initial: 'يـ', medial: 'ـيـ', final: 'ـي' },
   },
 ]
+
+/** TTS는 글자 한 자(ا، ب…)보다 글자 이름을 읽는 편이 안정적입니다. */
+export const arabicLetterSpeechArabic: Record<string, string> = {
+  alif: 'أَلِف',
+  ba: 'بَاء',
+  ta: 'تَاء',
+  tha: 'ثَاء',
+  jim: 'جِيم',
+  ha: 'حَاء',
+  kha: 'خَاء',
+  dal: 'دَال',
+  dhal: 'ذَال',
+  ra: 'رَاء',
+  zay: 'زَاي',
+  sin: 'سِين',
+  shin: 'شِين',
+  sad: 'صَاد',
+  dad: 'ضَاد',
+  'ta-emphatic': 'طَاء',
+  za: 'ظَاء',
+  ayn: 'عَيْن',
+  ghayn: 'غَيْن',
+  fa: 'فَاء',
+  qaf: 'قَاف',
+  kaf: 'كَاف',
+  lam: 'لَام',
+  mim: 'مِيم',
+  nun: 'نُون',
+  'ha-end': 'هَاء',
+  waw: 'وَاو',
+  ya: 'يَاء',
+}
+
+export function speechArabicForLetter(letter: ArabicAlphabetLetter): string {
+  return arabicLetterSpeechArabic[letter.id] ?? letter.forms.isolated
+}

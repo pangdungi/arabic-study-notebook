@@ -1,4 +1,4 @@
-import { speakArabic, sanitizeArabicSpeechText } from '../lib/speakArabic'
+import { primeArabicSpeech, speakArabic, sanitizeArabicSpeechText } from '../lib/speakArabic'
 
 type ArabicSpeechButtonProps = {
   text: string
@@ -17,6 +17,7 @@ export function ArabicSpeechButton({ text, label }: ArabicSpeechButtonProps) {
       disabled={!speechText}
       onClick={(event) => {
         event.stopPropagation()
+        primeArabicSpeech()
         speakArabic(speechText)
       }}
     >
